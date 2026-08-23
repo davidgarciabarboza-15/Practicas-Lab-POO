@@ -82,7 +82,7 @@ Antes de limpiar, se corrió el script de diagnóstico (`P1.py`), que detectó:
 
 ### 3.10 Crear versiones "seguras" de las categorías (`*_clean`)
 **Qué se hizo:** se crearon 3 columnas nuevas: `net_clean`, `magSource_clean` y `magType_clean`. En ellas, las categorías con menos de 30 registros se agrupan bajo la etiqueta `other`.
-**Por qué:** comparar un grupo de 3,535 sismos contra un grupo de 1 sismo no es estadísticamente válido en pruebas como ANOVA (Práctica 4) o clasificación (Práctica 6). Las columnas nuevas dejan grupos listos para usar:
+**Por qué:** comparar un grupo de 3,535 sismos contra un grupo de 1 sismo no es estadísticamente válido en pruebas como ANOVA o clasificación. Las columnas nuevas dejan grupos listos para usar:
 
 | net_clean | Registros |
 | --- | --- |
@@ -99,7 +99,7 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 ### 3.12 Ordenar cronológicamente
 **Qué se hizo:** todo el dataset se ordenó por `time`, del sismo más antiguo al más reciente.
-**Por qué:** para series de tiempo (Práctica 8) los datos deben estar en orden.
+**Por qué:** para series de tiempo, los datos deben estar en orden.
 
 ### 3.13 Exportar sin tocar el original
 **Qué se hizo:** el resultado se guardó en un archivo **nuevo** llamado `Earthquake_limpio.csv` (codificación UTF-8 compatible con Excel). `Earthquake.csv` queda intacto.
@@ -122,11 +122,9 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 ## 5. Notas y limitaciones documentadas
 
-1. **Profundidades negativas:** se conservan 8 filas por la justificación del punto 4.7.
+1. **Profundidades negativas:** se conservan 8 filas por la justificación del punto 3.7.
 2. **El año 2026 está incompleto:** solo incluye datos hasta agosto. Si en la Práctica 8 se agrupa por año, 2026 se verá con menos sismos; no es un error, es un año parcial.
 3. **Categoría `other`:** en las columnas `*_clean` agrupa los casos raros (4 a 12 registros). Puede excluirse en pruebas estadísticas si se desea comparar solo grupos grandes.
 4. **`profundidad_estimada`:** el 18.5% de las profundidades son valores por defecto (5/10 km). Queda documentado para considerarlo en los modelos.
 
 ---
-
-*Este documento acompaña a los scripts `P1.py` (diagnóstico) y de limpieza, y a los archivos `Earthquake.csv` (original) y `Earthquake_limpio.csv` (resultado).*
