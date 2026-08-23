@@ -119,22 +119,8 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 ---
 
-## 5. Por qué este dataset sirve para todas las prácticas
 
-| Práctica | Qué se usará del dataset limpio |
-| --- | --- |
-| 2. Estadística descriptiva | 12 variables numéricas sin nulos y categorías para agrupar (`net_clean`, `magType_clean`) |
-| 3. Visualización | Histogramas (`mag`, `depth`), dispersión (`latitude` vs `longitude`), cajas por red, serie temporal (80 meses), pastel (`magType_clean`) |
-| 4. ANOVA / Kruskal-Wallis | Grupos con más de 30 registros en `net_clean` y `magType_clean` para comparar magnitudes |
-| 5. Modelos lineales y R² | Variables numéricas completas para predecir magnitud |
-| 6. KNN | Etiqueta `net_clean` con 3 clases grandes (tx, us, ci) y variables geográficas |
-| 7. K-Means | Variables numéricas sin nulos; bandera `profundidad_estimada` para filtrar si se requiere |
-| 8. Pronóstico | `time` como fecha real, ordenada, con 80 meses de historia |
-| 9. Análisis de texto | Columna `place` con texto libre ("50 km W of Mentone, Texas") para nube de palabras |
-
----
-
-## 6. Notas y limitaciones documentadas
+## 5. Notas y limitaciones documentadas
 
 1. **Profundidades negativas:** se conservan 8 filas por la justificación del punto 4.7.
 2. **El año 2026 está incompleto:** solo incluye datos hasta agosto. Si en la Práctica 8 se agrupa por año, 2026 se verá con menos sismos; no es un error, es un año parcial.
