@@ -15,7 +15,7 @@ El archivo original contiene **7,893 filas (sismos)** y **22 columnas (variables
 
 ---
 
-## 3. Lo que reveló el diagnóstico (problemas detectados)
+## 2. Lo que reveló el diagnóstico (problemas detectados)
 
 Antes de limpiar, se corrió el script de diagnóstico (`P1.py`), que detectó:
 
@@ -30,21 +30,21 @@ Antes de limpiar, se corrió el script de diagnóstico (`P1.py`), que detectó:
 
 ---
 
-## 4. Decisiones de limpieza aplicadas (con justificación)
+## 3. Decisiones de limpieza aplicadas (con justificación)
 
-### 4.1 Convertir fechas a fechas reales
+### 3.1 Convertir fechas a fechas reales
 **Qué se hizo:** `time` y `updated` se convirtieron de texto a fecha (`datetime`), estandarizadas en UTC y sin zona horaria para evitar problemas de compatibilidad.
 **Por qué:** con fechas como texto no se puede ordenar cronológicamente ni preparar la Práctica 8 (Pronóstico / series de tiempo).
 
-### 4.2 Duplicados
+### 3.2 Duplicados
 **Qué se hizo:** se verificaron duplicados por ID; se encontraron 0, por lo que no se eliminó nada.
 **Por qué:** un registro duplicado haría que un sismo "cuente doble" en estadísticas y modelos. Se deja documentado que se revisó.
 
-### 4.3 Normalizar texto
+### 3.3 Normalizar texto
 **Qué se hizo:** se quitaron espacios sobrantes y se unificaron minúsculas en columnas de texto (`net`, `magType`, `magSource`, `place`, `id`).
 **Por qué:** evita que "Texas" y "texas " cuenten como categorías diferentes.
 
-### 4.4 Eliminar columnas que no aportan información
+### 3.4 Eliminar columnas que no aportan información
 **Qué se hizo:** se eliminaron 3 columnas:
 - `locationSource`: idéntica a `net` en el 100% de las filas (verificado). Conservar ambas es guardar dos veces lo mismo.
 - `type`: el 100% de los valores es "earthquake". Una columna donde todo es igual no sirve para comparar ni agrupar.
@@ -52,23 +52,23 @@ Antes de limpiar, se corrió el script de diagnóstico (`P1.py`), que detectó:
 
 **Por qué:** las columnas sin variabilidad solo agregan ruido.
 
-### 4.5 Unificar tipos de magnitud (`magType`)
+### 3.5 Unificar tipos de magnitud (`magType`)
 **Qué se hizo:** `ml(texnet)` (144), `mlv` (11) y `mlr` (8) se unificaron en `ml`.
 **Por qué:** todas son "magnitud local" (la misma escala), solo que reportadas con etiquetas distintas por redes diferentes. Es como tener "kilo", "kg" y "kilogramo": es lo mismo escrito diferente. Después de unificar, `ml` pasó de 5,372 a 5,535 registros.
 
-### 4.6 Filtro de valores físicamente imposibles
+### 3.6 Filtro de valores físicamente imposibles
 **Qué se hizo:** se verificó que la latitud esté entre -90 y 90, la longitud entre -180 y 180 y la magnitud sea mayor a 0. Se detectaron 0 filas fuera de rango (queda documentado).
 **Por qué:** una latitud de 999° no existe en el planeta; este filtro protege contra errores de sensor o de carga.
 
-### 4.7 Profundidades negativas: conservar y documentar
+### 3.7 Profundidades negativas: conservar y documentar
 **Qué se hizo:** las 8 filas con profundidad negativa **no** se eliminaron; se conservan y se documentan.
 **Por qué:** según la documentación del USGS, la profundidad puede medirse respecto a distintas referencias (nivel del mar, geoide, elevación de las estaciones), por lo que un valor ligeramente negativo es un artefacto de medición, no un sismo imposible. Eliminarlas perdería información válida.
 
-### 4.8 Ceros sospechosos tratados como "desconocido"
+### 3.8 Ceros sospechosos tratados como "desconocido"
 **Qué se hizo:** los ceros exactos en `magError` (144), `horizontalError` (4), `rms` (11), `magNst` (1) y `dmin` (925) se convirtieron a valor faltante (NaN).
 **Por qué:** un error de medición de "cero" no es real: significa que la red no reportó el dato. Dejarlo en cero sesgaría (jalaría hacia abajo) la mediana y las estadísticas.
 
-### 4.9 Rellenar valores faltantes con la mediana (imputación)
+### 3.9 Rellenar valores faltantes con la mediana (imputación)
 **Qué se hizo:** los valores faltantes de cada columna se rellenaron con su **mediana**:
 - `nst`: 1,188 nulos → mediana 31
 - `dmin`: 927 → 0.111
@@ -80,7 +80,7 @@ Antes de limpiar, se corrió el script de diagnóstico (`P1.py`), que detectó:
 
 **Por qué:** la mayoría de los análisis y modelos no funcionan con celdas vacías. Se usa la mediana y no el promedio porque estas variables tienen valores extremos (por ejemplo, sismos medidos por 658 estaciones) que deformarían el promedio.
 
-### 4.10 Crear versiones "seguras" de las categorías (`*_clean`)
+### 3.10 Crear versiones "seguras" de las categorías (`*_clean`)
 **Qué se hizo:** se crearon 3 columnas nuevas: `net_clean`, `magSource_clean` y `magType_clean`. En ellas, las categorías con menos de 30 registros se agrupan bajo la etiqueta `other`.
 **Por qué:** comparar un grupo de 3,535 sismos contra un grupo de 1 sismo no es estadísticamente válido en pruebas como ANOVA (Práctica 4) o clasificación (Práctica 6). Las columnas nuevas dejan grupos listos para usar:
 
@@ -93,21 +93,21 @@ Antes de limpiar, se corrió el script de diagnóstico (`P1.py`), que detectó:
 
 Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas por si se quieren usar.
 
-### 4.11 Marcar profundidades estimadas (`profundidad_estimada`)
+### 3.11 Marcar profundidades estimadas (`profundidad_estimada`)
 **Qué se hizo:** se creó una columna que marca con `True` los sismos cuya profundidad es exactamente 5.0 o 10.0 km (1,457 filas, 18.5%).
 **Por qué:** cuando el USGS no puede calcular la profundidad exacta, asigna un valor por defecto (5 o 10 km). Esta columna permite identificar cuáles profundidades son "estimadas" para que prácticas futuras (modelos, clustering) puedan filtrarlas si lo necesitan, sin perder esas filas.
 
-### 4.12 Ordenar cronológicamente
+### 3.12 Ordenar cronológicamente
 **Qué se hizo:** todo el dataset se ordenó por `time`, del sismo más antiguo al más reciente.
 **Por qué:** para series de tiempo (Práctica 8) los datos deben estar en orden.
 
-### 4.13 Exportar sin tocar el original
+### 3.13 Exportar sin tocar el original
 **Qué se hizo:** el resultado se guardó en un archivo **nuevo** llamado `Earthquake_limpio.csv` (codificación UTF-8 compatible con Excel). `Earthquake.csv` queda intacto.
 **Por qué:** una buena práctica de limpieza nunca sobrescribe la fuente original.
 
 ---
 
-## 5. Resultado final
+## 4. Resultado final
 
 | Aspecto | Original | Limpio |
 | --- | --- | --- |
@@ -119,7 +119,7 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 ---
 
-## 6. Por qué este dataset sirve para todas las prácticas
+## 5. Por qué este dataset sirve para todas las prácticas
 
 | Práctica | Qué se usará del dataset limpio |
 | --- | --- |
@@ -134,7 +134,7 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 ---
 
-## 7. Notas y limitaciones documentadas
+## 6. Notas y limitaciones documentadas
 
 1. **Profundidades negativas:** se conservan 8 filas por la justificación del punto 4.7.
 2. **El año 2026 está incompleto:** solo incluye datos hasta agosto. Si en la Práctica 8 se agrupa por año, 2026 se verá con menos sismos; no es un error, es un año parcial.
