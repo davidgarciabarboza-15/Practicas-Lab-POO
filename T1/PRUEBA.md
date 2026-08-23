@@ -8,7 +8,7 @@
 
 ## 1. Descripción del dataset
 
-El archivo original contiene **7,893 filas (sismos)** y **22 columnas (variables)**, con registros del **2 de enero de 2020 al 14 de agosto de 2026**. Cada fila es un sismo con su fecha y hora (`time`), ubicación (`latitude`, `longitude`), profundidad (`depth`), magnitud (`mag`), tipo de magnitud medida (`magType`), red sísmica que lo registró (`net`), errores de medición y un texto que describe el lugar (`place`).
+El archivo original contiene **7,893 filas (sismos)** y **22 columnas**, con registros del **2 de enero de 2020 al 14 de agosto de 2026**. Cada fila es un sismo con su fecha y hora (`time`), ubicación (`latitude`, `longitude`), profundidad (`depth`), magnitud (`mag`), tipo de magnitud medida (`magType`), red sísmica que lo registró (`net`), errores de medición y un texto que describe el lugar (`place`).
 
 
 
