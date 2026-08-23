@@ -1,7 +1,7 @@
 # Práctica 1 – Limpieza de Datos: Justificación de Decisiones
 
 **Dataset:** `Earthquake.csv` (sismos registrados por el USGS entre 2020 y 2026)
-**Scripts usados:** `P1.py` (diagnóstico) y script de limpieza final
+**Scripts usados:** `Clean_Earthquake.py`
 **Resultado:** `Earthquake_limpio.csv` (el archivo original **nunca** se modifica)
 
 ---
@@ -70,13 +70,13 @@ Antes de limpiar, se corrió el script de diagnóstico (`P1.py`), que detectó:
 
 ### 3.9 Rellenar valores faltantes con la mediana (imputación)
 **Qué se hizo:** los valores faltantes de cada columna se rellenaron con su **mediana**:
-- `nst`: 1,188 nulos → mediana 31
-- `dmin`: 927 → 0.111
-- `magError`: 277 → 0.1
-- `rms`: 13 → 0.28
-- `gap`: 2 → 69
-- `horizontalError`: 4 → 1.0155
-- `magNst`: 1 → 24
+- `nst`: 1,188 nulos -> mediana 31
+- `dmin`: 927 -> 0.111
+- `magError`: 277 -> 0.1
+- `rms`: 13 -> 0.28
+- `gap`: 2 -> 69
+- `horizontalError`: 4 -> 1.0155
+- `magNst`: 1 -> 24
 
 **Por qué:** la mayoría de los análisis y modelos no funcionan con celdas vacías. Se usa la mediana y no el promedio porque estas variables tienen valores extremos (por ejemplo, sismos medidos por 658 estaciones) que deformarían el promedio.
 
@@ -103,7 +103,7 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 ### 3.13 Exportar sin tocar el original
 **Qué se hizo:** el resultado se guardó en un archivo **nuevo** llamado `Earthquake_limpio.csv` (codificación UTF-8 compatible con Excel). `Earthquake.csv` queda intacto.
-**Por qué:** una buena práctica de limpieza nunca sobrescribe la fuente original.
+**Por qué:** no se sabe si el archivo original será necesario para cualquier cosa.
 
 ---
 
