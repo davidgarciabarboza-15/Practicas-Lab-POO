@@ -1,7 +1,7 @@
 # Práctica 1 – Limpieza de Datos: Justificación de Decisiones
 
 **Dataset:** `Earthquake.csv` (sismos registrados por el USGS entre 2020 y 2026)
-**Scripts usados:** `Clean_Earthquake.py`
+**Script completo:** `Clean_Earthquake.py`
 **Resultado:** `Earthquake_limpio.csv` (el archivo original **nunca** se modifica)
 
 ---
@@ -17,7 +17,7 @@ El archivo original contiene **7,893 filas (sismos)** y **22 columnas**, con reg
 
 ## 2. Lo que reveló el diagnóstico (problemas detectados)
 
-Antes de limpiar, se hicieron pruebas y se hizo un pequeño script de diagnóstico para visualizar los datos y ver que se debía hacer para hacer una correcta limpieza y al final este script se incluyo en la versión final junto con la limpieza. En el diagnóstico podemos destacar los siguientes puntos:
+Antes de limpiar, se hicieron pruebas y en ellas se desarrollo un pequeño script de diagnóstico para visualizar los datos e identificar que era lo que se debía incluir en la limpieza, y al final este script se incluyo en la versión final junto con la limpieza. En el diagnóstico podemos destacar los siguientes puntos:
 
 1. **Fechas como texto:** `time` y `updated` se cargaban como texto, no como fechas reales.
 2. **Valores nulos:** `nst` (1,188 nulos, 15%), `magError` (133), `gap` (2), `dmin` (2), `rms` (2).
@@ -39,6 +39,9 @@ Antes de limpiar, se hicieron pruebas y se hizo un pequeño script de diagnósti
 ### 3.2 Duplicados
 **Qué se hizo:** se verificaron duplicados por ID; se encontraron 0, por lo que no se eliminó nada.
 **Por qué:** un registro duplicado haría que un sismo "cuente doble" en estadísticas y modelos. Se deja documentado que se revisó.
+
+
+
 
 ### 3.3 Normalizar texto
 **Qué se hizo:** se quitaron espacios sobrantes y se unificaron minúsculas en columnas de texto (`net`, `magType`, `magSource`, `place`, `id`).
@@ -68,6 +71,8 @@ Antes de limpiar, se hicieron pruebas y se hizo un pequeño script de diagnósti
 **Qué se hizo:** los ceros exactos en `magError` (144), `horizontalError` (4), `rms` (11), `magNst` (1) y `dmin` (925) se convirtieron a valor faltante (NaN).
 **Por qué:** un error de medición de "cero" no es real: significa que la red no reportó el dato. Dejarlo en cero sesgaría (jalaría hacia abajo) la mediana y las estadísticas.
 
+
+
 ### 3.9 Rellenar valores faltantes con la mediana (imputación)
 **Qué se hizo:** los valores faltantes de cada columna se rellenaron con su **mediana**:
 - `nst`: 1,188 nulos -> mediana 31
@@ -80,9 +85,11 @@ Antes de limpiar, se hicieron pruebas y se hizo un pequeño script de diagnósti
 
 **Por qué:** la mayoría de los análisis y modelos no funcionan con celdas vacías. Se usa la mediana y no el promedio porque estas variables tienen valores extremos (por ejemplo, sismos medidos por 658 estaciones) que deformarían el promedio.
 
-### 3.10 Crear versiones "seguras" de las categorías (`*_clean`)
+### 3.10 Crear versiones "seguras" de las categorías (`clean`)
 **Qué se hizo:** se crearon 3 columnas nuevas: `net_clean`, `magSource_clean` y `magType_clean`. En ellas, las categorías con menos de 30 registros se agrupan bajo la etiqueta `other`.
 **Por qué:** comparar un grupo de 3,535 sismos contra un grupo de 1 sismo no es estadísticamente válido en pruebas como ANOVA o clasificación. Las columnas nuevas dejan grupos listos para usar:
+
+
 
 | net_clean | Registros |
 | --- | --- |
@@ -118,6 +125,8 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 | Duplicados | 0 | 0 |
 
 ---
+
+
 
 
 ## 5. Notas y limitaciones documentadas
