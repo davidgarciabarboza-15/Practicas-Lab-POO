@@ -17,7 +17,7 @@ El archivo original contiene **7,893 filas (sismos)** y **22 columnas**, con reg
 
 ## 2. Lo que reveló el diagnóstico (problemas detectados)
 
-Antes de limpiar, en las pruebas hechas se hizo un pequeño script de diagnóstico para visualizar los datos y ver que se debía hacer para hacer una correcta limpieza y al final este script se incluyo en la versión final junto con la limpieza. En el diagnóstico podemos destacar los siguientes puntos:
+Antes de limpiar, se hicieron pruebas y se hizo un pequeño script de diagnóstico para visualizar los datos y ver que se debía hacer para hacer una correcta limpieza y al final este script se incluyo en la versión final junto con la limpieza. En el diagnóstico podemos destacar los siguientes puntos:
 
 1. **Fechas como texto:** `time` y `updated` se cargaban como texto, no como fechas reales.
 2. **Valores nulos:** `nst` (1,188 nulos, 15%), `magError` (133), `gap` (2), `dmin` (2), `rms` (2).
