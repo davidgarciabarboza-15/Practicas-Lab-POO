@@ -10,16 +10,8 @@
 
 El archivo original contiene **7,893 filas (sismos)** y **22 columnas (variables)**, con registros del **2 de enero de 2020 al 14 de agosto de 2026**. Cada fila es un sismo con su fecha y hora (`time`), ubicación (`latitude`, `longitude`), profundidad (`depth`), magnitud (`mag`), tipo de magnitud medida (`magType`), red sísmica que lo registró (`net`), errores de medición y un texto que describe el lugar (`place`).
 
-## 2. Cumplimiento de requisitos del curso
 
-| Requisito | ¿Cumple? | Evidencia |
-| --- | :---: | --- |
-| Al menos 4 variables | ✅ | 22 columnas originales (23 después de limpiar) |
-| Al menos 2 numéricas | ✅ | `mag`, `depth`, `latitude`, `longitude`, `nst`, `rms`, etc. (12 en total) |
-| Al menos 1 alfanumérica | ✅ | `magType`, `net`, `magSource`, `place`, `id` |
-| Al menos 1 fecha | ✅ | `time` y `updated`, con 80 meses de datos (2020–2026) |
-| Mínimo 5,000 filas | ✅ | 7,893 filas |
-| 1 solo archivo/tabla | ✅ | Todo concentrado en `Earthquake.csv` |
+
 
 ---
 
