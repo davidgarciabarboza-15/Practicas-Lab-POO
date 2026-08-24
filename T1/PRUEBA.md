@@ -129,11 +129,11 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 
 
-## 5. Notas y limitaciones documentadas
+## 5. Notas y limitaciones
 
 1. **Profundidades negativas:** se conservan 8 filas por la justificación del punto 3.7.
-2. **El año 2026 está incompleto:** solo incluye datos hasta agosto. Si en la Práctica 8 se agrupa por año, 2026 se verá con menos sismos; no es un error, es un año parcial.
-3. **Categoría `other`:** en las columnas `*_clean` agrupa los casos raros (4 a 12 registros). Puede excluirse en pruebas estadísticas si se desea comparar solo grupos grandes.
-4. **`profundidad_estimada`:** el 18.5% de las profundidades son valores por defecto (5/10 km). Queda documentado para considerarlo en los modelos.
+2. **El año 2026 está incompleto:** solo incluye datos hasta agosto, si en la practica de series de tiempo se agrupa por año, 2026 se verá con menos sismos.
+3. **Categoría `other`:** en las columnas `clean` agrupa los casos raros (4 a 12 registros), puede excluirse en pruebas estadísticas si se desea comparar solo grupos grandes.
+4. **`profundidad_estimada`:** el 18.5% de las profundidades son valores por defecto (5 o 10 km), 1ueda documentado para considerarlo en los modelos.
 
 ---
