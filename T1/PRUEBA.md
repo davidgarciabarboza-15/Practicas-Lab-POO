@@ -34,42 +34,42 @@ Antes de limpiar, se hicieron pruebas y en ellas se desarrollo un pequeño scrip
 
 ### 3.1 Convertir fechas a fechas reales
 **Qué se hizo:** `time` y `updated` se convirtieron de texto a fecha (`datetime`), estandarizadas en UTC y sin zona horaria para evitar problemas de compatibilidad.
-**Por qué:** con fechas como texto no se puede ordenar cronológicamente ni preparar la Práctica 8 (Pronóstico / series de tiempo).
+**Por qué:** con fechas como texto no se puede ordenar cronológicamente ni preparar la práctica de series de tiempo).
 
 ### 3.2 Duplicados
-**Qué se hizo:** se verificaron duplicados por ID; se encontraron 0, por lo que no se eliminó nada.
-**Por qué:** un registro duplicado haría que un sismo "cuente doble" en estadísticas y modelos. Se deja documentado que se revisó.
+**Qué se hizo:** se verificaron duplicados por id; se encontraron 0 por lo que no se eliminó nada.
+**Por qué:** un registro duplicado haría que un sismo "cuente doble" lo que perjudicaría a la estadistica.
 
 
 
 
 ### 3.3 Normalizar texto
 **Qué se hizo:** se quitaron espacios sobrantes y se unificaron minúsculas en columnas de texto (`net`, `magType`, `magSource`, `place`, `id`).
-**Por qué:** evita que "Texas" y "texas " cuenten como categorías diferentes.
+**Por qué:** evita que por ejemplo "Texas" y "texas " cuenten como categorías diferentes.
 
 ### 3.4 Eliminar columnas que no aportan información
 **Qué se hizo:** se eliminaron 3 columnas:
-- `locationSource`: idéntica a `net` en el 100% de las filas (verificado). Conservar ambas es guardar dos veces lo mismo.
-- `type`: el 100% de los valores es "earthquake". Una columna donde todo es igual no sirve para comparar ni agrupar.
-- `status`: 99.99% es "reviewed" (7,892 de 7,893). Al ser prácticamente constante, no aporta variación útil.
+- `locationSource`: idéntica a `net` en el 100% de las filas (verificado por el script), conservar ambas es guardar dos veces lo mismo.
+- `type`: el 100% de los valores es "earthquake", una columna donde todo es igual no sirve para comparar ni agrupar.
+- `status`: 99.99% es "reviewed" (7,892 de 7,893), al ser prácticamente lo mismo, no aporta variación útil.
 
 **Por qué:** las columnas sin variabilidad solo agregan ruido.
 
 ### 3.5 Unificar tipos de magnitud (`magType`)
 **Qué se hizo:** `ml(texnet)` (144), `mlv` (11) y `mlr` (8) se unificaron en `ml`.
-**Por qué:** todas son "magnitud local" (la misma escala), solo que reportadas con etiquetas distintas por redes diferentes. Es como tener "kilo", "kg" y "kilogramo": es lo mismo escrito diferente. Después de unificar, `ml` pasó de 5,372 a 5,535 registros.
+**Por qué:** todas son "magnitud local" (la misma escala), solo que reportadas con etiquetas distintas por redes diferentes, esto sería como tener "kilo", "kg" y "kilogramo": es lo mismo escrito diferente. Después de unificar, `ml` pasó de 5,372 a 5,535 registros.
 
 ### 3.6 Filtro de valores físicamente imposibles
 **Qué se hizo:** se verificó que la latitud esté entre -90 y 90, la longitud entre -180 y 180 y la magnitud sea mayor a 0. Se detectaron 0 filas fuera de rango (queda documentado).
-**Por qué:** una latitud de 999° no existe en el planeta; este filtro protege contra errores de sensor o de carga.
+**Por qué:** una latitud de 999 grados no existe en el planeta, este filtro protege contra errores de sensor.
 
 ### 3.7 Profundidades negativas: conservar y documentar
-**Qué se hizo:** las 8 filas con profundidad negativa **no** se eliminaron; se conservan y se documentan.
-**Por qué:** según la documentación del USGS, la profundidad puede medirse respecto a distintas referencias (nivel del mar, geoide, elevación de las estaciones), por lo que un valor ligeramente negativo es un artefacto de medición, no un sismo imposible. Eliminarlas perdería información válida.
+**Qué se hizo:** las 8 filas con profundidad negativa no se eliminaron, se conservan y se documentan.
+**Por qué:** según la documentación del USGS, la profundidad puede medirse respecto a distintas referencias (nivel del mar, geoide, elevación de las estaciones), por lo que un valor ligeramente negativo es un artefacto de medición, no un sismo imposible. **Eliminarlas perdería información válida**.
 
 ### 3.8 Ceros sospechosos tratados como "desconocido"
 **Qué se hizo:** los ceros exactos en `magError` (144), `horizontalError` (4), `rms` (11), `magNst` (1) y `dmin` (925) se convirtieron a valor faltante (NaN).
-**Por qué:** un error de medición de "cero" no es real: significa que la red no reportó el dato. Dejarlo en cero sesgaría (jalaría hacia abajo) la mediana y las estadísticas.
+**Por qué:** un error de medición de "cero" no es real, significa que la red no reportó el dato. Dejarlo en cero sesgaría (jalaría hacia abajo) la mediana y las estadísticas.
 
 
 
@@ -83,7 +83,7 @@ Antes de limpiar, se hicieron pruebas y en ellas se desarrollo un pequeño scrip
 - `horizontalError`: 4 -> 1.0155
 - `magNst`: 1 -> 24
 
-**Por qué:** la mayoría de los análisis y modelos no funcionan con celdas vacías. Se usa la mediana y no el promedio porque estas variables tienen valores extremos (por ejemplo, sismos medidos por 658 estaciones) que deformarían el promedio.
+**Por qué:** la mayoría de los análisis y modelos no funcionan con celdas vacías, se usa la mediana y no el promedio porque estas variables tienen valores extremos (por ejemplo, sismos medidos por 658 estaciones) que deformarían el promedio. Un link de referencia acerca de la imputación: https://link.springer.com/article/10.1186/s40537-020-00313-w
 
 ### 3.10 Crear versiones "seguras" de las categorías (`clean`)
 **Qué se hizo:** se crearon 3 columnas nuevas: `net_clean`, `magSource_clean` y `magType_clean`. En ellas, las categorías con menos de 30 registros se agrupan bajo la etiqueta `other`.
@@ -106,7 +106,7 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 ### 3.12 Ordenar cronológicamente
 **Qué se hizo:** todo el dataset se ordenó por `time`, del sismo más antiguo al más reciente.
-**Por qué:** para series de tiempo, los datos deben estar en orden.
+**Por qué:** para tener un orden claro y puede ayudar a futuras practicas.
 
 ### 3.13 Exportar sin tocar el original
 **Qué se hizo:** el resultado se guardó en un archivo **nuevo** llamado `Earthquake_limpio.csv` (codificación UTF-8 compatible con Excel). `Earthquake.csv` queda intacto.
@@ -114,7 +114,7 @@ Las columnas originales (`net`, `magSource`, `magType`) se conservan intactas po
 
 ---
 
-## 4. Resultado final
+## 4. Resumen final
 
 | Aspecto | Original | Limpio |
 | --- | --- | --- |
