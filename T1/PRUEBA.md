@@ -20,7 +20,7 @@ El archivo original contiene **7,893 filas (sismos)** y **22 columnas**, con reg
 Antes de limpiar, se hicieron pruebas y en ellas se desarrollo un pequeño script de diagnóstico para visualizar los datos e identificar que era lo que se debía incluir en la limpieza (también se usó levemente excel para visualizar un poco), y al final este script se incluyo en la versión final junto con la limpieza. En el diagnóstico podemos destacar los siguientes puntos:
 
 1. **Fechas como texto:** `time` y `updated` se cargaban como texto, no como fechas reales.
-2. **Valores nulos:** `nst` (1,188 nulos, 15%), `magError` (133), `gap` (2), `dmin` (2), `rms` (2).
+2. **Valores nulos:** `nst` (1,188 nulos), `magError` (133), `gap` (2), `dmin` (2), `rms` (2).
 3. **Sin duplicados:** 0 filas duplicadas y 0 IDs repetidos (verificado, no hubo que eliminar nada).
 4. **Columnas inútiles o redundantes:** `locationSource` es 100% idéntica a `net`; `type` solo contiene "earthquake"; `status` es 99.99% "reviewed".
 5. **Categorías inconsistentes en `magType`:** el mismo tipo de magnitud aparecía con nombres distintos: `ml`, `ml(texnet)`, `mlv`, `mlr`.
