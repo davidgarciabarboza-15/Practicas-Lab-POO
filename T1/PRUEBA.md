@@ -15,7 +15,7 @@ El archivo original contiene **7,893 filas (sismos)** y **22 columnas**, con reg
 
 ---
 
-## 2. Lo que reveló el diagnóstico (problemas detectados)
+## 2. Lo que reveló el diagnóstico
 
 Antes de limpiar, se hicieron pruebas y en ellas se desarrollo un pequeño script de diagnóstico para visualizar los datos e identificar que era lo que se debía incluir en la limpieza (también se usó levemente excel para visualizar un poco), y al final este script se incluyo en la versión final junto con la limpieza. En el diagnóstico podemos destacar los siguientes puntos:
 
