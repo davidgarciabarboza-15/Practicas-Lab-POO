@@ -67,3 +67,7 @@ Lo que se ve: EEUU tiene la magnitud media más baja (muchos sismos chicos) y M�
 2. No se repitió el boxplot aquí porque ya se generó en la Práctica 2 (`img/boxplot_pais.png` e `img/boxplot_red.png`); con histogramas, pasteles, dispersión, barras y línea quedan cubiertos los 5 tipos pedidos.
 3. Referencias consultadas:
    - https://matplotlib.org/stable/plot_types/index.html (para elegir el tipo de gráfica adecuado según el dato)
+4. ACLARACIÓN: en practicas anteriores se olvidó mencionar el como se sabe que es cada cosa, los links de referecia son:
+   - https://earthquake.usgs.gov/data/comcat/data-eventterms.php?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
+   - https://earthquake.usgs.gov/fdsnws/event/1/?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
+   - https://earthquake.usgs.gov/data/comcat/?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
