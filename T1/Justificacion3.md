@@ -1,18 +1,20 @@
-# Práctica 3 --- Visualización de Datos (Justificaciones)
+# Práctica 3 Visualización de Datos 
 
-El script de esta práctica es `Visualizacion.py`. Todas las gráficas se guardan en `img/` y pueden verse en las capturas de ejecución del repositorio.
+El script de esta práctica es `Visualizacion_Datos_Earthquake.py`. Todas las gráficas se guardan en la carpeta de `Graficas` y pueden verse en las capturas de ejecución del repositorio.
 
-La práctica pide al menos 5 tipos de gráficas distintas usando ciclos o automatización. Se generaron: histogramas, pasteles, dispersión (mapa), barras y línea. Los ciclos se usaron donde tenía sentido para no escribir el mismo código varias veces (histogramas, pasteles y el mapa por país).
+La práctica pide al menos 5 tipos de gráficas distintas y en este caso se generaron: histogramas, pasteles, dispersión (mapa), barras y línea. 
+
+Los ciclos se usaron donde tenía sentido para no escribir el mismo código varias veces (histogramas, pasteles y el mapa por país).
 
 ---
 
-## 1. Histogramas (uno por variable numérica)
+## 1. Histogramas
 
 Se hicieron en un ciclo para `mag`, `depth`, `nst` y `rms`, cada uno con un color distinto para distinguirlos entre sí.
 
-- `hist_mag.png`: deja ver que la mayoría de los sismos son pequeños y los grandes son raros.
+- `hist_mag.png`: deja ver que la mayoría de los sismos son pequeños y los grandes no tan comunes.
 - `hist_depth.png`: casi todos los sismos son superficiales, con una cola larga de pocos sismos muy profundos.
-- `hist_nst.png` y `hist_rms.png`: son de apoyo y muestran dos medidas de calidad del registro. `nst` es el número de estaciones que registraron el sismo (a más estaciones, mejor queda ubicado), y `rms` es el residuo medio en segundos entre el tiempo de llegada observado y el calculado; mientras más bajo, más confiable es la ubicación. Con los histogramas se ve que la mayoría de los sismos se registran con pocas decenas de estaciones y con residuos pequeños.
+- `hist_nst.png` y `hist_rms.png`: `nst` es el número de estaciones que registraron el sismo (a más estaciones, mejor queda ubicado), y `rms` es el residuo medio en segundos entre el tiempo de llegada observado y el calculado; mientras más bajo, más confiable es la ubicación. Con los histogramas se ve que la mayoría de los sismos se registran con pocas decenas de estaciones y con residuos pequeños.
 
 Se usaron 25 barras porque con 50 se veían demasiado cargados.
 
