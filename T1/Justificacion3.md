@@ -59,17 +59,17 @@ Lo que se ve: EEUU tiene la magnitud media más baja (muchos sismos chicos) y M�
 
 ## 6. Línea: sismos por mes
 
-`linea_mes.png` muestra el conteo mensual para ver la tendencia en el tiempo con más detalle que la gráfica por año. Como son 80 meses, se puso una etiqueta cada 12 para que el eje no se amontonara.
+`linea_mes.png` muestra el conteo mensual para ver la tendencia en el tiempo con más detalle que la gráfica por año. Como son alrededor de 80 meses, se puso una etiqueta cada 12 para que el eje no se amontonara.
 
 ---
 
 ## 7. Notas
 
-1. Se reutilizó la función `categorize_pais` de la Práctica 2 para poder colorear el mapa y hacer las barras por país; al ser el mismo proyecto, tiene sentido aprovechar el código propio.
-2. No se repitió el boxplot aquí porque ya se generó en la Práctica 2 (`img/boxplot_pais.png` e `img/boxplot_red.png`); con histogramas, pasteles, dispersión, barras y línea quedan cubiertos los 5 tipos pedidos.
+1. Se reutilizó la función `categorize_pais` de la Práctica 2 para poder colorear el mapa y hacer las barras por país.
+2. No se repitió el boxplot aquí porque ya se generó en la Práctica 2 (`boxplot_pais.png` y `boxplot_red.png`).
 3. Referencias consultadas:
    - https://matplotlib.org/stable/plot_types/index.html (para elegir el tipo de gráfica adecuado según el dato)
-4. ACLARACIÓN: en practicas anteriores se olvidó mencionar el como se sabe que es cada cosa, los links de referecia son:
+4. ACLARACIÓN IMPORTANTE: en practicas anteriores se olvidó mencionar el como se sabe que es cada cosa, los links de referecia son:
    - https://earthquake.usgs.gov/data/comcat/data-eventterms.php?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
    - https://earthquake.usgs.gov/fdsnws/event/1/?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
    - https://earthquake.usgs.gov/data/comcat/?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
