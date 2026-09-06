@@ -22,30 +22,30 @@ Se usaron 25 barras porque con 50 se veían algo amontonado.
 
 ## 2. Pasteles (proporciones por categoría)
 
-Se hicieron en un ciclo para `pais` y `net_clean`. Se eligió el pastel porque son pocas categorías (4) y la proporción de cada una se ve de un vistazo.
+Se hicieron en un ciclo para `pais` y `net_clean`. Se eligió el pastel porque son pocas categorías (4) y la proporción de cada una se ve de inmediato.
 
-- `pastel_pais.png`: muestra que la mayoría de los sismos del catálogo ocurren en EEUU, seguido de México, y muy pocos en Centroamérica.
+- `pastel_pais.png`: muestra que la mayoría de los sismos del catálogo ocurren en EEUU, seguido de México, y muy pocos en Centroamérica (Recordar que estamos analizando principalmente a México y alrededores). 
 - `pastel_net_clean.png`: muestra qué redes registran más sismos (tx y us concentran la mayor parte).
 
-Se quitaron las categorías con poquísimos sismos (menos de 30) porque su rebanada ni se vería y solo ensuciaría la gráfica. El texto se puso un poco más grande para que se lea bien.
+Se quitaron las categorías con muy pocos sismos (menos de 30) porque su rebanada ni se vería bien en la gráfica. 
 
 ---
 
 ## 3. Dispersión: mapa de sismos
 
-`mapa.png` grafica latitud contra longitud, que es básicamente un mapa de dónde tiembla. Cada país va con su color (EEUU azul, México verde, Guatemala naranja, Honduras rojo).
+`mapa.png` grafica latitud contra longitud, que es básicamente un mapa de donde hay sismos. Cada país va con su color (EEUU azul, México verde, Guatemala naranja, Honduras rojo).
 
-Se usaron puntos chiquitos y con transparencia (alpha) porque con casi 8000 sismos, con puntos normales todo se vuelve una mancha y no se aprecian las zonas donde se concentra más actividad.
+Se usaron puntos chiquitos y con transparencia (alpha) porque con casi 8000 sismos, con puntos normales todo se vuelve una mancha y no se aprecian las zonas donde se concentra más actividad sismica.
 
-Lo que se ve: los clusters de Texas, el sur de California, el norte de México y la franja de Centroamérica, coherente con lo que muestran las barras por país.
+Obs: los clusters de Texas, el sur de California, el norte de México y la franja de Centroamérica, es coherente con lo que muestran las barras por país.
 
 ---
 
 ## 4. Barras: sismos por año
 
-`barras_anio.png` cuenta cuántos sismos hubo por año, con un color distinto por año para distinguirlas mejor.
+`barras_anio.png` cuenta cuántos sismos hubo por año, con un color distinto por año para distinguir bien.
 
-Nota: 2026 sale más bajo porque el año está incompleto (solo hasta agosto); no es un error de los datos.
+Nota: 2026 sale más bajo porque el año está incompleto (solo hasta agosto), no es un error de los datos.
 
 ---
 
@@ -53,13 +53,13 @@ Nota: 2026 sale más bajo porque el año está incompleto (solo hasta agosto); n
 
 `barras_mag_pais.png` compara qué tan fuertes son en promedio los sismos de cada zona. Cada país lleva el mismo color que en el mapa para poder relacionar ambas gráficas.
 
-Lo que se ve: EEUU tiene la magnitud media más baja (muchos sismos chicos) y México y Guatemala tienen promedios más altos (menos sismos pero más fuertes).
+Obs: EEUU tiene la magnitud media más baja (muchos sismos chicos) y México y Guatemala tienen promedios más altos (menos sismos pero más fuertes).
 
 ---
 
 ## 6. Línea: sismos por mes
 
-`linea_mes.png` muestra el conteo mensual para ver la tendencia en el tiempo con más detalle que la gráfica por año. Como son alrededor de 80 meses, se puso una etiqueta cada 12 para que el eje no se amontonara.
+`linea_mes.png` muestra el conteo mensual para ver la tendencia en el tiempo con más detalle que la gráfica por año, y como son alrededor de 80 meses, se puso una etiqueta cada 12 para organizar mejor.
 
 ---
 
