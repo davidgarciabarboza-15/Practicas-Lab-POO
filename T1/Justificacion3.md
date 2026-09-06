@@ -14,7 +14,7 @@ Se hicieron en un ciclo para `mag`, `depth`, `nst` y `rms`, cada uno con un colo
 
 - `hist_mag.png`: deja ver que la mayoría de los sismos son pequeños y los grandes no tan comunes.
 - `hist_depth.png`: casi todos los sismos son superficiales, con una cola larga de pocos sismos muy profundos.
-- `hist_nst.png` y `hist_rms.png`: `nst` es el número de estaciones que registraron el sismo (a más estaciones, mejor queda ubicado), y `rms` es el residuo medio en segundos entre el tiempo de llegada observado y el calculado; mientras más bajo, más confiable es la ubicación. Con los histogramas se ve que la mayoría de los sismos se registran con pocas decenas de estaciones y con residuos pequeños.
+- `hist_nst.png` y `hist_rms.png`: `nst` es el número de estaciones que registraron el sismo (a más estaciones, mejor queda ubicado), y `rms` es el residuo medio en segundos entre el tiempo de llegada observado y el calculado, mientras más bajo, más confiable es la ubicación. Con los histogramas se ve que la mayoría de los sismos se registran con pocas decenas de estaciones y con residuos pequeños.
 
 Se usaron 25 barras porque con 50 se veían demasiado cargados.
 
