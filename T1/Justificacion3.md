@@ -2,7 +2,7 @@
 
 El script de esta práctica es `Visualizacion_Datos_Earthquake.py`. Todas las gráficas se guardan en la carpeta de `Graficas` y pueden verse en las capturas de ejecución del repositorio.
 
-La práctica pide al menos 5 tipos de gráficas distintas y en este caso se generaron: histogramas, pasteles, dispersión (mapa), barras y línea. 
+La práctica pide al menos 5 tipos de gráficas diferentes y en este caso se generaron: histogramas, pasteles, dispersión, barras y de línea. 
 
 Los ciclos se usaron donde tenía sentido para no escribir el mismo código varias veces (histogramas, pasteles y el mapa por país).
 
