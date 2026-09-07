@@ -1,6 +1,6 @@
 # Práctica 3 Visualización de Datos 
 
-El script de esta práctica es `Visualizacion_Datos_Earthquake.py`. Todas las gráficas se guardan en la carpeta de `Graficas` y pueden verse en las capturas de ejecución del repositorio.
+El script de esta práctica es `Visualizacion_Datos_Earthquake.py`. Todas las gráficas se guardan en la carpeta de `Graficas` y pueden verse aquí mismo en el repositorio.
 
 La práctica pide al menos 5 tipos de gráficas diferentes y en este caso se generaron: histogramas, pasteles, dispersión, barras y de línea. 
 
@@ -32,11 +32,11 @@ Se quitaron las categorías con muy pocos sismos (menos de 30) porque su rebanad
 
 ## 3. Dispersión: mapa de sismos
 
-`mapa.png` grafica latitud contra longitud, que es básicamente un mapa de donde hay sismos. Cada país va con su color (EEUU azul, México verde, Guatemala naranja, Honduras rojo).
+`mapa.png` grafica latitud contra longitud, que es básicamente un mapa de donde hay sismos (de hecho se aprecia mas o menos la forma de México). Cada país va con su color (EEUU azul, México verde, Guatemala naranja, Honduras rojo).
 
 Se usaron puntos chiquitos y con transparencia (alpha) porque con casi 8000 sismos, con puntos normales todo se vuelve una mancha y no se aprecian las zonas donde se concentra más actividad sismica.
 
-Obs: los clusters de Texas, el sur de California, el norte de México y la franja de Centroamérica, es coherente con lo que muestran las barras por país.
+Obs: los puntos azules (EEUU) son los más numerosos (aunque no se aprecie tal vez mucho porque estan muy juntos) y se acumulan en zonas compactas al norte del mapa, los verdes (MEXICO) forman una franja alargada en diagonal, los naranjas (GUATEMALA) quedan en un grupo compacto al sur, y los rojos (HONDURAS) son pocos y aparecen dispersos en la esquina sureste. La cantidad de puntos de cada color concuerda con los conteos de las barras y el pastel por país. 
 
 ---
 
