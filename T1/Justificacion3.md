@@ -44,7 +44,7 @@ Obs: los puntos azules (EEUU) son los más numerosos (aunque no se aprecie tal v
 
 `barras_anio.png` cuenta cuántos sismos hubo por año, con un color distinto por año para distinguir bien.
 
-Nota: 2026 sale más bajo porque el año está incompleto (solo hasta agosto), no es un error de los datos.
+Obs: 2026 sale más bajo porque el año está incompleto (solo hasta agosto), no es un error de los datos.
 
 ---
 
