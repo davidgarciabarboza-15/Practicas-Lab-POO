@@ -61,6 +61,8 @@ Obs: EEUU tiene la magnitud media más baja (muchos sismos chicos) y México y G
 
 `linea_mes.png` muestra el conteo mensual para ver la tendencia en el tiempo con más detalle que la gráfica por año, y como son alrededor de 80 meses, se puso una etiqueta cada 12 para organizar mejor.
 
+La actividad mensual se mantiene "más o menos" constante, con picos aislados con muchos sismos en la misma zona en pocos días (esto apunta a ser réplicas). El último punto cae de golpe no porque haya bajado la actividad, sino porque ese mes está incompleto (los datos llegan solo hasta agosto de 2026).
+
 ---
 
 ## 7. Notas
