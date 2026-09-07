@@ -70,7 +70,7 @@ La actividad mensual se mantiene "más o menos" constante, con picos aislados co
 2. No se repitió el boxplot aquí porque ya se generó en la Práctica 2 (`boxplot_pais.png` y `boxplot_red.png`).
 3. Referencias consultadas:
    - https://matplotlib.org/stable/plot_types/index.html (para elegir el tipo de gráfica adecuado según el dato)
-4. ACLARACIÓN IMPORTANTE: en practicas anteriores se olvidó mencionar el como se sabe que es cada cosa, los links de referecia son:
+4. ACLARACIÓN IMPORTANTE: en practicas anteriores se olvidó mencionar el como se sabe que es cada columna del dataset, los links de referecia son:
    - https://earthquake.usgs.gov/data/comcat/data-eventterms.php?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
    - https://earthquake.usgs.gov/fdsnws/event/1/?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
    - https://earthquake.usgs.gov/data/comcat/?spm=a2ty_o01.29997173.0.0.717c55fbqntSZS
