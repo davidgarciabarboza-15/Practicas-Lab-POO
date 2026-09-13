@@ -44,9 +44,8 @@ Y por qué Kruskal es en la que nos apoyamos si todas coinciden: porque es la ú
    - https://docs.scipy.org/doc/scipy/reference/stats.html (pruebas de scipy: shapiro, levene, kruskal, mannwhitneyu)
    - https://www.statsmodels.org/stable/generated/statsmodels.stats.anova.anova_lm.html (anova_lm de statsmodels)
    - https://medium.com/@sabourinleandre/post-hoc-tests-explained-tukey-bonferroni-holm-bonferroni-and-scheff%C3%A9s-test-ed362b820842 (inoformación general de Bonferroni)
-- https://github.com/ppGodel/data_mining/blob/main/data_analysis.org (material de la materia; de ahí el ANOVA con ols + anova_lm y la idea de revisar Shapiro y Levene, que ahí están como comentarios)
    - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kruskal.html (prueba de Kruskal-Wallis)
    - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html (prueba de Mann-Whitney U, el post-hoc de la ruta de Kruskal)
    - https://en.wikipedia.org/wiki/Bonferroni_correction (corrección de Bonferroni para comparaciones múltiples)
    - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html (prueba t por pares; con equal_var=False es la t de Welch)
-   - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html (Shapiro-Wilk
+   - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html (Shapiro-Wilk)   
