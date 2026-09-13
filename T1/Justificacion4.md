@@ -1,10 +1,13 @@
-# Práctica 4 --- Pruebas Estadísticas (Justificaciones)
+# Práctica 4 Pruebas Estadísticas
 
-El script de esta práctica es `Pruebas_Estadisticas.py` y su salida completa está en las capturas de ejecución del repositorio. La idea era comprobar si la magnitud y la profundidad de los sismos realmente cambian de un país a otro, o si las diferencias que vimos en las prácticas anteriores podían ser solo cosa del azar de la muestra. Al final de su salida, el script imprime un resumen que remite a este documento para el detalle de cada bloque.
+El script de esta práctica es `Pruebas_Estadisticas.py` y su salida completa está en las capturas del repositorio. La idea era comprobar si la magnitud y la profundidad de los sismos realmente cambian de un país a otro, o si las diferencias que vimos en las prácticas anteriores podían ser solo cosa del azar de la muestra. Al final de su salida, el script imprime un resumen.
 
 ## Qué se comprobó y con qué
 
-La indicación pide comprobar diferencias en datos etiquetados mediante ANOVA y prueba t, o con Kruskal-Wallis. Como etiqueta usamos el país (la categoría `pais` que venimos arrastrando desde la práctica 2), con cuatro grupos: EEUU, MEXICO, GUATEMALA y HONDURAS. Se hicieron dos comparaciones: magnitud por país y profundidad por país. En la primera se siguió la ruta de ANOVA con pruebas t como post-hoc, en la segunda la ruta de Kruskal-Wallis con Mann-Whitney, y en las dos se corrió también la prueba de la otra ruta como comprobación, para ver si coincidían.
+La indicación pide comprobar diferencias en datos etiquetados mediante ANOVA y prueba t, o con Kruskal-Wallis. Como etiqueta usamos el país (la categoría `pais` que venimos explotando desde la práctica 2), con cuatro grupos: EEUU, MEXICO, GUATEMALA y HONDURAS. 
+
+
+Se hicieron 2 comparaciones: magnitud por país y profundidad por país. En la primera se siguió la ruta de ANOVA con pruebas t como post-hoc, en la segunda la ruta de Kruskal-Wallis con Mann-Whitney, y en las dos se corrió también la prueba de la otra ruta como comprobación, para ver si coincidían.
 
 Antes de eso, un repaso corto de qué responde cada cosa. La hipótesis nula (H0) dice que todos los países son iguales en esa variable y que cualquier diferencia que veamos es ruido; la alternativa dice que al menos un país es distinto. El p-value es la probabilidad de ver diferencias tan grandes como las nuestras si H0 fuera cierta, y se compara contra 0.05: si queda por debajo, H0 se rechaza.
 
@@ -41,3 +44,9 @@ Y por qué Kruskal es en la que nos apoyamos si todas coinciden: porque es la ú
    - https://docs.scipy.org/doc/scipy/reference/stats.html (pruebas de scipy: shapiro, levene, kruskal, mannwhitneyu)
    - https://www.statsmodels.org/stable/generated/statsmodels.stats.anova.anova_lm.html (anova_lm de statsmodels)
    - https://medium.com/@sabourinleandre/post-hoc-tests-explained-tukey-bonferroni-holm-bonferroni-and-scheff%C3%A9s-test-ed362b820842 (inoformación general de Bonferroni)
+- https://github.com/ppGodel/data_mining/blob/main/data_analysis.org (material de la materia; de ahí el ANOVA con ols + anova_lm y la idea de revisar Shapiro y Levene, que ahí están como comentarios)
+   - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kruskal.html (prueba de Kruskal-Wallis)
+   - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html (prueba de Mann-Whitney U, el post-hoc de la ruta de Kruskal)
+   - https://en.wikipedia.org/wiki/Bonferroni_correction (corrección de Bonferroni para comparaciones múltiples)
+   - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html (prueba t por pares; con equal_var=False es la t de Welch)
+   - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html (Shapiro-Wilk
