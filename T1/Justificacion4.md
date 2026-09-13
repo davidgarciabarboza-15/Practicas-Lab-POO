@@ -40,3 +40,4 @@ Y por qué Kruskal es en la que nos apoyamos si todas coinciden: porque es la ú
    - https://github.com/ppGodel/data_mining/blob/main/data_analysis.org (material de la materia, base del ANOVA con ols)
    - https://docs.scipy.org/doc/scipy/reference/stats.html (pruebas de scipy: shapiro, levene, kruskal, mannwhitneyu)
    - https://www.statsmodels.org/stable/generated/statsmodels.stats.anova.anova_lm.html (anova_lm de statsmodels)
+   - https://medium.com/@sabourinleandre/post-hoc-tests-explained-tukey-bonferroni-holm-bonferroni-and-scheff%C3%A9s-test-ed362b820842 (inoformación general de Bonferroni)
