@@ -41,11 +41,7 @@ Con casi 8000 sismos las pruebas tienen mucho peso, cualquier diferencia real, a
 
 Y ¿por qué Kruskal es en la que nos apoyamos si todas "coinciden"? Porque de las pruebas globales es la única cuyo p es válido sin condiciones con la forma que tienen los datos (no normales y con varianzas distintas). ANOVA acertó gracias a que la muestra es enorme, pero con grupos chicos y no normales pudo haber fallado. Que las dos rutas lleguen al mismo lugar no las vuelve equivalentes.
 
-## Notas
-
-1. El script está inspirado en la función anova() del data_analysis.org (el ols con fórmula y el anova_lm tipo 2)
-2. Shapiro y Levene no vienen pedidos explícitamente en la indicación, pero son el criterio para elegir entre las dos rutas
-3. Principales referencias consultadas:
+## Principales referencias consultadas:
    - https://github.com/ppGodel/data_mining/blob/main/data_analysis.org (material de la materia, base del ANOVA con ols)
    - https://docs.scipy.org/doc/scipy/reference/stats.html (pruebas de scipy shapiro, levene, kruskal, mannwhitneyu)
    - https://www.statsmodels.org/stable/generated/statsmodels.stats.anova.anova_lm.html (anova_lm de statsmodels)
