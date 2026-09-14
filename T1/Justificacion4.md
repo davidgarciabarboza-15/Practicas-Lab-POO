@@ -1,6 +1,9 @@
 # Práctica 4 Pruebas Estadísticas
 
-El script de esta práctica es `Pruebas_Estadisticas.py` y su salida completa está en las capturas del repositorio. La idea era comprobar si la magnitud y la profundidad de los sismos realmente cambian de un país a otro, o si las diferencias que vimos en las prácticas anteriores podían ser solo cosa del azar de la muestra. Al final de su salida, el script imprime un resumen.
+El script de esta práctica es `Pruebas_Estadisticas.py` y su salida completa está en las capturas del repositorio. 
+
+
+La idea general era comprobar si la magnitud y la profundidad de los sismos realmente cambian de un país a otro, o si las diferencias que vimos en las prácticas anteriores podían ser solo cosa del azar de la muestra. Al final de su salida, el script imprime un resumen.
 
 ## Qué se comprobó y con qué
 
