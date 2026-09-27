@@ -1,4 +1,4 @@
-# Práctica 5 --- Modelos Lineales y Correlación (Justificaciones)
+# Práctica 5 Modelos Lineales y Correlación 
 
 El script de esta práctica es `Modelos_Lineales.py`. Los valores exactos (matrices de correlación, top de pares, R2 y p de cada modelo) quedan en las capturas de ejecución, y las dos gráficas se guardan en `Graficas` como `lr_conteo_mensual_vs_indice_tiempo.png` y `lr_dmin_vs_gap_azimutal.png`. El trabajo fue: primero ver cuáles variables numéricas se correlacionan, y después ajustar dos modelos lineales con su gráfica y su R2.
 
