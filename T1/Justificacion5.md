@@ -29,14 +29,14 @@ Un detalle que vale la pena dejar escrito: con 7893 datos, la pendiente de este 
 
 La línea verde es el modelo base o modelo nulo: el que siempre predice el promedio de y sin mirar x. No es decoración: el R2 se define comparando contra ese modelo, R2 = 1 menos (el error de tu recta) entre (el error del promedio). Por eso en el modelo 1, donde la roja queda pegada a la verde, el R2 es casi cero, y en el modelo 2, donde se separan, el R2 sí sube. Ver las dos líneas dibujadas deja leer el R2 con los ojos antes de leer el número.
 
-## Qué nos dejan estos dos modelos
+## Lo que podemos deducir de los 2 modelos
 
 Por un lado, la actividad sísmica del catálogo no tiene tendencia lineal en el tiempo: es estacionaria, con picos de enjambres y réplicas, coherente con lo que ya habíamos visto en las prácticas 3 y 4. Por otro, las métricas de cobertura de la red (gap y dmin) sí se relacionan positivamente, pero con una forma de abanico que ninguna recta aprieta del todo. Y como lección de la práctica: una recta puede ser significativa y aun así explicar poco, y la línea verde del promedio está ahí para que no se nos olvide.
 
 ## Notas
 
-1. El script está inspirado en el ejemplo de Linear Regression del material de la materia (lo de volver la fecha índice, la dispersión con recta roja y el guardado del png), pero los coeficientes se sacan directo con model.params en vez del hack de read_html del material, que aventaba warnings, y la línea verde del promedio se tomó de la variante L2 del mismo material.
-2. El par del modelo 2 lo eligió la matriz de correlación en la ejecución, no se fijó a mano; el top 5 impreso y las matrices quedan en las capturas.
+1. El script está inspirado en el ejemplo de linear_regression.org del material de la materia.
+2. El par del modelo 2 lo eligió la matriz de correlación en la ejecución, no se fijó a mano, el top 5 impreso y las matrices quedan en las capturas.
 3. Referencias consultadas:
    - https://github.com/ppGodel/data_mining (material de la materia; ejemplo de regresión lineal con datos de UANL)
    - https://en.wikipedia.org/wiki/Coefficient_of_determination (contra qué compara exactamente el R2 y por qué la línea del promedio es la base)
