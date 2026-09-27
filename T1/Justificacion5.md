@@ -1,8 +1,11 @@
 # Práctica 5 Modelos Lineales y Correlación 
 
-El script de esta práctica es `Modelos_Lineales.py`. Los valores exactos (matrices de correlación, top de pares, R2 y p de cada modelo) quedan en las capturas de ejecución, y las dos gráficas se guardan en `Graficas` como `lr_conteo_mensual_vs_indice_tiempo.png` y `lr_dmin_vs_gap_azimutal.png`. El trabajo fue: primero ver cuáles variables numéricas se correlacionan, y después ajustar dos modelos lineales con su gráfica y su R2.
+El script de esta practica es `Modelos_Lineales.py`, los valores exactos (matrices de correlación, top de pares, R2 y p de cada modelo) quedan en las capturas de ejecución, y las dos gráficas se guardan en `Graficas` como `lr_dmin_gap.png` y `lr_sismos_mes.png`. 
 
-## Cómo se eligió el par del segundo modelo
+
+Lo primero fue ver cuáles variables numéricas se correlacionan, y después ajustar dos modelos lineales con su gráfica y su R2.
+
+## Elección del par del segundo modelo
 
 En vez de escoger un par a mano, se sacó la matriz de correlación de Pearson y de Spearman sobre las variables numéricas (mag, depth, nst, gap, dmin, rms, magNst), y se dejó que ganara el par con correlación más fuerte en valor absoluto de Spearman. Spearman manda para elegir porque desde la práctica 4 sabemos que los datos no son normales, y Spearman no asume normalidad ni línea recta, solo que la relación sea monotónica. El par ganador fue gap contra dmin, y el script imprime un top 5 de pares para que la elección se pueda ver completa y no parezca un truco de magia.
 
