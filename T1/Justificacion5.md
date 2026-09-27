@@ -40,7 +40,7 @@ La línea verde es el modelo base o modelo nulo, es decir, el que siempre predic
 
 Por un lado, la actividad sísmica no tiene una tendencia a subir o bajar con el tiempo, se mantiene más o menos igual (aunque con sus picos por réplicas), tal como ya habíamos visto en las prácticas 3 y 4. Por otro lado, las métricas de cobertura (gap y dmin) sí se relacionan, pero los datos están muy dispersos, así que una línea recta no alcanza a explicarlos del todo.
 
-## Notas
+## NOTAS
 
 1. El script está inspirado en el ejemplo de linear_regression.org del material de la materia.
 2. El par del modelo 2 lo eligió la matriz de correlación en la ejecución, no se fijó a mano, el top 5 impreso y las matrices quedan en las capturas.
