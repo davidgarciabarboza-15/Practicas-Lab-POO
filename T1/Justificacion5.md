@@ -7,31 +7,38 @@ Lo primero fue ver cuáles variables numéricas se correlacionan, y después aju
 
 ## Elección del par del segundo modelo
 
-En vez de escoger un par a mano, se sacó la matriz de correlación de Pearson y de Spearman sobre las variables numéricas (mag, depth, nst, gap, dmin, rms, magNst), y se dejó que ganara el par con correlación más fuerte en valor absoluto de Spearman. Spearman manda para elegir porque desde la práctica 4 sabemos que los datos no son normales, y Spearman no asume normalidad ni línea recta, solo que la relación sea monotónica. El par ganador fue gap contra dmin, y el script imprime un top 5 de pares para que la elección se pueda ver completa y no parezca un truco de magia.
+En vez de escoger un par, se sacó la matriz de correlación de Pearson y de Spearman sobre las variables numéricas (mag, depth, nst, gap, dmin, rms, magNst), y se dejó que ganara el par con correlación más fuerte en valor absoluto de Spearman. Spearman manda para elegir porque desde la práctica 4 sabemos que los datos no son normales, y Spearman no asume normalidad ni línea recta, solo que la relación vaya siempre en el mismo sentido, que al subir una, la otra también suba (o ambas bajen), sin importar si es una recta perfecta o una curva. 
 
-¿Por qué correlacionan esas dos? Las dos describen qué tan bien la red "vio" el sismo: dmin es la distancia a la estación más cercana que lo registró, y gap es el hueco azimutal más grande que queda entre las estaciones que reportaron. Si un sismo ocurre lejos de cualquier estación, la cobertura es pobre y el gap crece; por eso la relación positiva. No es una ley física, es una consecuencia operativa de cómo se construye el catálogo, y por eso es defendible.
 
-El código revisa además dos trampas antes de confiar en el par: avisa si el ganador involucra depth (las profundidades por defecto del USGS podrían inflar la correlación) y avisa si Pearson y Spearman discrepan mucho (señal de que la relación no es lineal). En esta corrida el ganador no lleva depth, así que la primera trampa no se activó.
+El par ganador fue gap contra dmin, y el script imprime un top 5 de pares para que la elección se aprecie.
 
-## Modelo 1: conteo mensual contra tiempo, al estilo del material
+En cuanto a la correlación de esas dos, las dos describen qué tan bien la red "vio" el sismo, dmin es la distancia a la estación más cercana que lo registró, y gap es el hueco azimutal más grande que queda entre las estaciones que reportaron (azimutal viene de azimut, o sea, dirección, visto desde el epicentro, cada estación que reporta queda en una dirección, y el gap es el hueco de dirección más grande que se queda sin estaciones). Si un sismo ocurre lejos de cualquier estación, la cobertura es pobre y el gap crece, por eso la relación positiva. 
 
-Este imita el ejemplo de la materia: se agrupa por mes, se cuentan los sismos, y como el mes no es numérico se convierte en un índice 0, 1, 2, ... para poder regresionarlo (el mismo truco de transform_variable del material). Después un OLS con statsmodels y la gráfica con la dispersión, la recta roja de la regresión y la línea verde del promedio de y.
+El código hace además dos revisiones antes de confiar en el par: avisa si el ganador involucra depth (las profundidades por defecto del USGS podrían inflar la correlación) y avisa si Pearson y Spearman discrepan mucho (señal de que la relación no es lineal). En esta corrida el ganador no lleva depth, así que la primera revisión no tuvo que activarse.
 
-Lo que se ve en la gráfica es justo lo que ya sospechábamos desde la práctica 3: la recta roja queda casi plana y pegada a la verde. Hay meses con enjambres (los picos de alrededor de 250 sismos) y meses tranquilos, pero alrededor de un piso de unos 100 sismos que no crece ni decrece con los años. La conclusión es que no hay tendencia lineal: el conteo mensual no va subiendo ni bajando sistemáticamente, y el R2 salió casi cero. La regresión aquí no le gana al modelo ingenuo de "predice siempre el promedio".
+## Modelo 1 conteo mensual contra tiempo
 
-## Modelo 2: dmin contra gap azimutal, el par de la matriz
+Se "imita" el ejemplo de la materia, se agrupa por mes, se cuentan los sismos, y como el mes no es numérico se convierte en un índice 0, 1, 2, etc, para poder regresionarlo. Después un OLS con statsmodels y la gráfica con la dispersión, la recta roja de la regresión y la línea verde del promedio de y.
 
-La gráfica de este modelo se ve distinta: una nube que se abre en abanico. Con gap chico, dmin está casi obligado a ser chico (buena cobertura implica una estación cerca), y con gap grande, dmin puede ser casi cualquier cosa aunque en promedio crece. La recta roja con pendiente positiva se separa claramente de la verde, así que sí hay una tendencia que la recta captura, pero la dispersión es enorme: el R2 queda moderado, no alto. La forma de abanico lo explica: la relación es más de tendencia monotónica que de línea apretada, y por eso se eligió con Spearman.
+Lo que se ve en la gráfica es justo lo que ya se intuia desde la práctica 3, la recta roja queda casi plana y pegada a la verde. Hay meses con enjambres (los picos de alrededor de 250 sismos) y meses tranquilos, pero alrededor de un piso de unos 100 sismos que no crece ni decrece con los años. 
 
-Un detalle que vale la pena dejar escrito: con 7893 datos, la pendiente de este modelo sale significativa (p minúsculo), pero el R2 moderado recuerda que significativo no es lo mismo que ajustar bien. La significancia dice "la tendencia no es casualidad"; el R2 dice "cuánta de la dispersión alcanza a explicar la recta". Aquí la tendencia existe, pero la recta solo explica una parte.
+
+La conclusión es que no hay tendencia lineal, el conteo mensual no va subiendo ni bajando ordenadamente, y el R2 salió casi cero. La regresión aquí no le gana a la línea verde, predecir siempre el promedio da básicamente lo mismo.
+
+## Modelo 2 dmin contra gap azimutal, el par de la matriz
+
+La gráfica de este modelo se ve distinta. Con gap chico, dmin está casi obligado a ser chico (buena cobertura implica una estación cerca), y con gap grande, dmin puede ser casi cualquier cosa aunque en promedio crece. La recta roja con pendiente positiva se separa claramente de la verde, así que sí, hay una tendencia que la recta captura, pero la dispersión es enorme, el R2 queda moderado, no alto. La forma de la grafica explica que la relación es más de tendencia monotónica que de línea apretada, y por eso se eligió con Spearman.
+
+
+
 
 ## La línea verde y contra qué compara el R2
 
-La línea verde es el modelo base o modelo nulo: el que siempre predice el promedio de y sin mirar x. No es decoración: el R2 se define comparando contra ese modelo, R2 = 1 menos (el error de tu recta) entre (el error del promedio). Por eso en el modelo 1, donde la roja queda pegada a la verde, el R2 es casi cero, y en el modelo 2, donde se separan, el R2 sí sube. Ver las dos líneas dibujadas deja leer el R2 con los ojos antes de leer el número.
+La línea verde es el modelo base o modelo nulo, es decir, el que siempre predice el promedio de y sin mirar x. R2 se define comparando contra ese modelo, R2 = 1 menos (el error de la recta) entre (el error del promedio). Por eso, en el modelo 1, donde la roja queda pegada a la verde, el R2 es casi cero, y en el modelo 2, donde se separan, el R2 si sube. 
 
 ## Lo que podemos deducir de los 2 modelos
 
-Por un lado, la actividad sísmica del catálogo no tiene tendencia lineal en el tiempo: es estacionaria, con picos de enjambres y réplicas, coherente con lo que ya habíamos visto en las prácticas 3 y 4. Por otro, las métricas de cobertura de la red (gap y dmin) sí se relacionan positivamente, pero con una forma de abanico que ninguna recta aprieta del todo. Y como lección de la práctica: una recta puede ser significativa y aun así explicar poco, y la línea verde del promedio está ahí para que no se nos olvide.
+Por un lado, la actividad sísmica no tiene una tendencia a subir o bajar con el tiempo, se mantiene más o menos igual (aunque con sus picos por réplicas), tal como ya habíamos visto en las prácticas 3 y 4. Por otro lado, las métricas de cobertura (gap y dmin) sí se relacionan, pero los datos están muy dispersos, así que una línea recta no alcanza a explicarlos del todo.
 
 ## Notas
 
