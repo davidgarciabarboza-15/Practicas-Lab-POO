@@ -48,3 +48,4 @@ Por un lado, la actividad sísmica no tiene una tendencia a subir o bajar con el
    - https://github.com/ppGodel/data_mining (material de la materia; ejemplo de regresión lineal con datos de UANL)
    - https://en.wikipedia.org/wiki/Coefficient_of_determination (contra qué compara exactamente el R2 y por qué la línea del promedio es la base)
    - https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html (OLS de statsmodels)
+   - https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient (concepto para Pearson/Spearman)
