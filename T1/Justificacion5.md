@@ -14,7 +14,7 @@ El par ganador fue gap contra dmin, y el script imprime un top 5 de pares para q
 
 En cuanto a la correlación de esas dos, las dos describen qué tan bien la red "vio" el sismo, dmin es la distancia a la estación más cercana que lo registró, y gap es el hueco azimutal más grande que queda entre las estaciones que reportaron (azimutal viene de azimut, o sea, dirección, visto desde el epicentro, cada estación que reporta queda en una dirección, y el gap es el hueco de dirección más grande que se queda sin estaciones). Si un sismo ocurre lejos de cualquier estación, la cobertura es pobre y el gap crece, por eso la relación positiva. 
 
-El código hace además dos revisiones antes de confiar en el par: avisa si el ganador involucra depth (las profundidades por defecto del USGS podrían inflar la correlación) y avisa si Pearson y Spearman discrepan mucho (señal de que la relación no es lineal). En esta corrida el ganador no lleva depth, así que la primera revisión no tuvo que activarse.
+El código hace además dos revisiones antes de confiar en el par, avisa si el ganador involucra depth (las profundidades por defecto del USGS podrían inflar la correlación) y avisa si Pearson y Spearman discrepan mucho (señal de que la relación no es lineal). En esta corrida el ganador no lleva depth, así que la primera revisión no tuvo que activarse.
 
 ## Modelo 1 conteo mensual contra tiempo
 
