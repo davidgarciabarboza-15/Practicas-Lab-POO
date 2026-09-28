@@ -27,7 +27,7 @@ La conclusión es que no hay tendencia lineal, el conteo mensual no va subiendo 
 
 ## Modelo 2 dmin contra gap azimutal, el par de la matriz
 
-La gráfica de este modelo se ve distinta. Con gap chico, dmin está casi obligado a ser chico (buena cobertura implica una estación cerca), y con gap grande, dmin puede ser casi cualquier cosa aunque en promedio crece. La recta roja con pendiente positiva se separa claramente de la verde, así que sí, hay una tendencia que la recta captura, pero la dispersión es enorme, el R2 queda moderado, no alto. La forma de la grafica explica que la relación es más de tendencia monotónica que de línea apretada, y por eso se eligió con Spearman.
+La gráfica de este modelo se ve distinta, con gap chico, dmin está casi obligado a ser chico (buena cobertura implica una estación cerca), y con gap grande, dmin puede ser casi cualquier cosa aunque en promedio crece. La recta roja con pendiente positiva se separa claramente de la verde, así que sí, hay una tendencia que la recta captura, pero la dispersión es enorme, el R2 queda moderado, no alto. La forma de la grafica explica que la relación es más de tendencia monotónica que de línea apretada, y por eso se eligió con Spearman.
 
 
 
