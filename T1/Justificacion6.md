@@ -1,6 +1,8 @@
 # Práctica 6 Clasificación de Datos
 
-El script de esta práctica es KNN.py. Los números exactos (accuracy de cada experimento, k elegido, matriz de confusión y reporte por clase) quedan en las capturas de ejecución, y las dos gráficas se guardan como knn_barrido_k.png y knn_clases_mag_depth.png. 
+El script de esta práctica es KNN.py. 
+
+Los números exactos (accuracy de cada experimento, k elegido, matriz de confusión y reporte por clase) quedan en las capturas de ejecución, y las dos gráficas se guardan como knn_barrido_k.png y knn_clases_mag_depth.png. 
 
 
 La idea fue clasificar de qué país es un sismo usando únicamente cómo se registró, con el algoritmo KNN.
