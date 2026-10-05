@@ -32,7 +32,7 @@ Junto al accuracy del modelo final se imprime el accuracy de un modelo base, uno
 
 ## Cómo se leen los resultados
 
-Guatemala se clasifica casi sin error porque sus sismos viven en otra parte del espacio de características: profundidad mediana de unos 74 km contra unos 7 km de EEUU y unos 10 km de MEXICO, una diferencia que ya teníamos desde la práctica 4. 
+Guatemala se clasifica casi sin error porque sus sismos viven en otra parte del espacio de características, profundidad mediana de unos 74 km contra unos 7 km de EEUU y unos 10 km de MEXICO, una diferencia que ya teníamos desde la práctica 4. 
 
 
 EEUU y MEXICO en cambio se prestan a confusión porque ambos son sismos mayormente de poca profundidad y con coberturas parecidas, y sus nubes se traslapan. La dispersión por clases (knn_clases_mag_depth.png, con los mismos colores de todo el proyecto) enseña justo eso, Guatemala en su zona profunda y los otros dos mezclados entre los sismos de poca profundidad.
