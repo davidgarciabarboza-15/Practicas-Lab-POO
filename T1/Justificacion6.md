@@ -12,13 +12,13 @@ La etiqueta es el país (la que arrastramos desde la práctica 2), recortada a t
 Las características son cómo se registró el sismo, profundidad, magnitud, número de estaciones (nst y magNst), gap azimutal (el hueco de dirección más grande entre las estaciones que reportaron), distancia a la estación más cercana (dmin) y rms. 
 
 
-Latitud y longitud se dejaron fuera a propósito, y eso es importante, porque con ellas, el país es puramente geografía (un sismo en Texas es de EEUU porque está en Texas), y el modelo acertaría casi todo sin aprender nada, entonces sin ellas, la pregunta que queda es: si la huella de cómo se registró el sismo alcanza para revelar el país.
+Latitud y longitud se dejaron fuera a propósito, y aquí está el punto, porque con ellas, el país es puramente geografía (un sismo en Texas es de EEUU porque está en Texas), y el modelo acertaría casi todo sin aprender nada, entonces sin ellas, la pregunta que queda es: si la huella de cómo se registró el sismo alcanza para revelar el país.
 
 Los datos se parten 70/30 en entrenamiento y prueba, de forma estratificada (cada parte conserva la misma proporción de clases que el total) y con semilla 42 para que la partición sea la misma en cada ejecución.
 
 ## KNN y por qué escalar
 
-KNN clasifica por votación, para un sismo nuevo busca los k sismos ya conocidos más parecidos y deja que la clase mayoritaria entre esos vecinos decida, ese parecido, se calcula con la distancia entre los valores de las características (profundidad, magnitud, gap, etc.), y ahí aparece algo muy importante: si cada característica vive en una escala distinta, las más grandes dominan el cálculo. El gap va de 0 a 360 y el dmin de 0 a 8, así que con los valores crudos la distancia entre dos sismos dependería casi solo del gap y el resto de las características no pesaría, por eso, el mismo KNN se corrió con y sin StandardScaler, que deja cada característica con media 0 y varianza 1 para que todas pesen parejo, ambas versiones se compararon con validación cruzada sobre el entrenamiento y la escalada es la que gana (por cuánto, queda en las capturas). El scaler se ajusta solo con entrenamiento para no espiar el test.
+KNN clasifica por votación, para un sismo nuevo busca los k sismos ya conocidos más parecidos y deja que la clase mayoritaria entre esos vecinos decida, ese parecido, se calcula con la distancia entre los valores de las características (profundidad, magnitud, gap, etc.), y aquí está el detalle, si cada característica vive en una escala distinta, las más grandes dominan el cálculo. El gap va de 0 a 360 y el dmin de 0 a 8, así que con los valores crudos la distancia entre dos sismos dependería casi solo del gap y el resto de las características no pesaría, por eso, el mismo KNN se corrió con y sin StandardScaler, que deja cada característica con media 0 y varianza 1 para que todas pesen parejo, ambas versiones se compararon con validación cruzada sobre el entrenamiento y la escalada es la que gana (por cuánto, queda en las capturas). El scaler se ajusta solo con entrenamiento para no espiar el test.
 
 ## Cómo se eligió k y por qué el test no se toca hasta el final
 
@@ -40,7 +40,7 @@ Como verificación final se implementó un KNN a mano (distancia euclidiana y vo
 
 ## Notas
 
-1. Se repaso el material de classification.org de la materia
+1. Se repaso el material de classification.org y se usó como referencia
 2. Los valores exactos de accuracy, k y matriz quedan en las capturas de ejecución
 3. Referencias consultadas:
    - https://github.com/ppGodel/data_mining (material de la materia; classification.org con el KNN a mano y la dispersión por clase)
