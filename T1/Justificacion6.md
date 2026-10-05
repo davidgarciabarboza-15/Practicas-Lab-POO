@@ -45,7 +45,7 @@ Como verificación final se implementó un KNN a mano (distancia euclidiana y vo
 1. Se repaso el material de classification.org y se usó como referencia
 2. Los valores exactos de accuracy, k y matriz quedan en las capturas de ejecución
 3. Referencias consultadas:
-   - https://github.com/ppGodel/data_mining (material de la materia; classification.org con el KNN a mano y la dispersión por clase)
-   - https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm (concepto de KNN: votación de los vecinos más cercanos)
+   - https://github.com/ppGodel/data_mining (classification.org con el KNN a mano y la dispersión por clase)
+   - https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm (conceptos de KNN)
    - https://en.wikipedia.org/wiki/Cross-validation_(statistics) (validación cruzada y por qué las decisiones se toman en entrenamiento)
    - https://scikit-learn.org/stable/modules/preprocessing.html (por qué escalar en métodos que viven de distancias)
