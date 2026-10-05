@@ -5,7 +5,7 @@ El script de esta práctica es KNN.py. Los números exactos (accuracy de cada ex
 
 La idea fue clasificar de qué país es un sismo usando únicamente cómo se registró, con el algoritmo KNN.
 
-## La tarea y cómo se armó 
+## Qué se armó 
 
 La etiqueta es el país (la que arrastramos desde la práctica 2), recortada a tres clases, EEUU, MEXICO y GUATEMALA. Honduras quedó fuera de la clasificación a propósito porque con apenas 34 sismos, en una partición estratificada 70/30 quedarían unos 24 ejemplos en entrenamiento y unos 10 en test, muy pocos para que el modelo aprenda la clase, excluirla evita reportar métricas sin significado para esa categoría.
 
