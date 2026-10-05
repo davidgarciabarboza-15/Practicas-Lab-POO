@@ -40,7 +40,7 @@ EEUU y MEXICO en cambio se prestan a confusión porque ambos son sismos mayormen
 Como verificación final se implementó un KNN a mano (distancia euclidiana y votación por mayoría, la misma lógica del classification.org del material de la materia) y se comparó contra sklearn sobre una muestra de 200 sismos del test, ambos coinciden, lo que confirma que el proceso con librería fue correcto. 
 
 
-## Notas
+## NOTAS
 
 1. Se repaso el material de classification.org y se usó como referencia
 2. Los valores exactos de accuracy, k y matriz quedan en las capturas de ejecución
