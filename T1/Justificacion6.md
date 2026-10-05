@@ -39,6 +39,8 @@ EEUU y MEXICO en cambio se prestan a confusión porque ambos son sismos mayormen
 
 Como verificación final se implementó un KNN a mano (distancia euclidiana y votación por mayoría, la misma lógica del classification.org del material de la materia) y se comparó contra sklearn sobre una muestra de 200 sismos del test, ambos coinciden, lo que confirma que el proceso con librería fue correcto. 
 
+Entonces, para dar respuesta a lo planteado en la practica, digamos que es algo parcial ya que la huella de cómo se registró el sismo sí alcanza para separar Guatemala del resto (se clasifica casi sin error por su profundidad), pero no alcanza para distinguir EEUU de MEXICO, que se confunden entre sí porque ambos son sismos de poca profundidad y con coberturas parecidas. El KNN supera al modelo base que siempre predice la clase mayoritaria, así que sí aprende algo real, pero la confusión entre esas dos clases deja ver el límite de la huella de registro, sin latitud ni longitud alcanza para separar sismos profundos de sismos de poca profundidad, no para distinguir países que comparten el mismo régimen de profundidad.
+
 
 ## NOTAS
 
