@@ -35,7 +35,7 @@ Junto al accuracy del modelo final se imprime el accuracy de un modelo base, uno
 Guatemala se clasifica casi sin error porque sus sismos viven en otra parte del espacio de características, profundidad mediana de unos 74 km contra unos 7 km de EEUU y unos 10 km de MEXICO, una diferencia que ya teníamos desde la práctica 4. 
 
 
-EEUU y MEXICO en cambio se prestan a confusión porque ambos son sismos mayormente de poca profundidad y con coberturas parecidas, y sus nubes se traslapan. La dispersión por clases (knn_clases_mag_depth.png, con los mismos colores de todo el proyecto) enseña justo eso, Guatemala en su zona profunda y los otros dos mezclados entre los sismos de poca profundidad.
+EEUU y MEXICO en cambio se prestan a confusión porque ambos son sismos mayormente de poca profundidad y con coberturas parecidas, y sus nubes se traslapan. La dispersión por clases (knn_clases_mag_depth.png, con los mismos colores de las veces pasadas) enseña justo eso, Guatemala en su zona profunda y los otros dos mezclados entre los sismos de poca profundidad.
 
 Como verificación final se implementó un KNN a mano (distancia euclidiana y votación por mayoría, la misma lógica del classification.org del material de la materia) y se comparó contra sklearn sobre una muestra de 200 sismos del test, ambos coinciden, lo que confirma que el proceso con librería fue correcto. 
 
