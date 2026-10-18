@@ -16,7 +16,7 @@ El resultado: el silhouette se mantiene en una meseta de alrededor de 0.52 para 
 
 ## Los dos grupos encontrados
 
-El perfil de cada cluster (los promedios de cada característica) permite nombrarlos directo. El cluster 0 (2135 sismos) es el régimen profundo y grande: profundidad media de unos 38 km, magnitud de unos 4.4, más estaciones reportando (nst unos 54, magNst unos 80) pero con cobertura más holgada (gap unos 148, dmin unos 1.4 km). El cluster 1 (5758 sismos) es el régimen somero de red densa: profundidad de unos 7 km, magnitud de unos 2.9, menos estaciones y prácticamente encima del evento (dmin unos 0.1 km, gap unos 68). En la gráfica mag-depth los dos grupos se ven como una franja profunda y una nube somera concentrada en profundidades bajas.
+El perfil de cada cluster (los promedios de cada característica) permite nombrarlos directo. El cluster 0 (2135 sismos) es el régimen profundo y grande: profundidad media de unos 38 km, magnitud de unos 4.4, más estaciones reportando (nst unos 54, magNst unos 80) pero con cobertura más holgada (gap unos 148, dmin unos 1.4 km). El cluster 1 (5758 sismos) es el régimen somero de red densa: profundidad de unos 7 km, magnitud de unos 2.9, menos estaciones y prácticamente encima del evento (dmin unos 0.1 km, gap unos 68). En la gráfica mag-depth la separación se lee en la profundidad: solo el cluster 0 sube a la zona profunda (la columna de magnitudes 4 a 5 que alcanza hasta unos 270 km), mientras el cluster 1 se queda pegado a profundidades bajas en casi todo el rango de magnitud; en lo somero los dos grupos conviven, y por eso los clusters no son perfectamente compactos.
 
 ## La lectura de los clusters contra los países
 
@@ -27,6 +27,8 @@ La conclusión es la lección clásica del clustering, vista con datos propios: 
 ## Verificación a mano
 
 Como en la P6 con el KNN, se implementó un K-Means a mano con la lógica del material de la materia (proponer centroides, asignar cada punto al más cercano, recalcular los centroides como el promedio de sus miembros y repetir hasta que nadie se mueva) y se comparó contra sklearn: ambos llegaron a exactamente la misma inercia, 33497.2, lo que confirma que la librería y la lógica a mano llegan a la misma solución. Los png de inicio y convergencia dejan ver cómo los grupos se forman en pocas iteraciones.
+
+Un detalle visible en los png: en la corrida a mano los números de cluster salen intercambiados respecto a sklearn (lo que uno llama 0, el otro lo llama 1). No es un error: en agrupamiento los números son arbitrarios, y por eso exactamente la comparación entre las dos versiones se hace con la inercia y no etiqueta por etiqueta.
 
 ## Notas
 
