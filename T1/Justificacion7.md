@@ -1,6 +1,6 @@
 # Práctica 7 Agrupamiento de Datos
 
-La tarea fue descubrir grupos naturales en el catálogo con K-Means y evaluar qué fue lo que encontró. 
+La tarea fue descubrir grupos naturales en el catálogo con K-Means y evaluar qué fue lo que encontró.
 
 Las gráficas quedan como kmeans_barrido_k.png (inercia y silhouette por cada k), kmeans_clusters_mag_depth.png (los grupos finales en el plano mag-depth con sus centroides) y kmeans_iter_inicio.png y kmeans_iter_final.png (el inicio y la convergencia del K-Means a mano).
 
