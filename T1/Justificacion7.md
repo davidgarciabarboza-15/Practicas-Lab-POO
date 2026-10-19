@@ -6,9 +6,9 @@ Las gráficas quedan como kmeans_barrido_k.png (inercia y silhouette por cada k)
 
 ## Qué cambia respecto a la práctica 6
 
-En la clasificación de la P6 había una etiqueta que guiaba el ajuste. Aquí no: K-Means solo ve las características numéricas y tiene que descubrir los grupos por su cuenta. La etiqueta de país (la que arrastramos desde la P2) se recrea en el script pero se usa únicamente al final, en una tabla cruzada, para leer qué encontraron los clusters; nunca participa en el ajuste. Ese es el punto del aprendizaje no supervisado, y también explica por qué aquí no hay partición train/test (el modelo no predice, describe) y por qué no se excluyó a Honduras: sus 34 sismos se suman al montón como cualquier otro punto.
+En la clasificación de la práctica 6 había una etiqueta que guiaba el ajuste, pero aquí no, k-means solo ve las características numéricas y tiene que descubrir los grupos por su cuenta. La etiqueta de país (la de la práctica 2) se recrea en el script pero se usa únicamente al final, en una tabla cruzada, para leer qué encontraron los clusters, nunca participa en el ajuste. +++++Ese es el punto del aprendizaje no supervisado, y también explica por qué aquí no hay partición train/test (el modelo no predice, describe) y por qué no se excluyó a Honduras: sus 34 sismos se suman al montón como cualquier otro punto.+++++
 
-Las características son las mismas 7 de registro de la P6 (depth, mag, nst, gap, dmin, rms, magNst), escaladas con StandardScaler por la misma razón de entonces: K-Means vive de distancias y sin escalar el gap, que va de 0 a 360, dominaría el cálculo sobre las demás. Latitud y longitud se dejaron fuera otra vez a propósito: el país sale de la geografía, así que agrupar por geografía y luego comparar contra país sería redescubrir el mapa y no la estructura de los datos.
+Las características son las mismas 7 de registro de la práctica 6 (depth, mag, nst, gap, dmin, rms, magNst), escaladas con StandardScaler por la misma razón de la práctica 6, k-means se basa de distancias y sin escalar el gap, que va de 0 a 360, dominaría el cálculo sobre las demás. Latitud y longitud se dejaron fuera otra vez a propósito: el país sale de la geografía, así que agrupar por geografía y luego comparar contra país sería redescubrir el mapa y no la estructura de los datos.
 
 ## La elección de k con evidencia
 
