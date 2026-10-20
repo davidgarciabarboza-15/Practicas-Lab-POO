@@ -2,7 +2,7 @@
 
 El script de esta práctica es Forecasting.py y su gráfica queda como forecast_holdout.png. La tarea fue armar un modelo para pronosticar los meses futuros de una serie y evaluar qué tan bien lo hace. La serie elegida es el conteo mensual de sismos, la misma que venimos siguiendo desde la práctica 3, con 80 meses que van de 2020-01 a 2026-08.
 
-## La partición por tiempo y los cuatro contendientes
+## La partición por tiempo y los cuatro contendiente
 
 Aquí la partición no puede ser al azar como en la práctica 6, porque si el entrenamiento ve meses futuros el error sale mentiroso. Se entrenó con los primeros 68 meses y se reservaron los últimos 12 como holdout, que es donde se mide a todos por igual. Los cuatro contendientes son una regresión sobre el índice de tiempo al estilo del material de la materia, el promedio del entrenamiento como modelo base, el pronóstico naive que repite el último valor visto, y Holt, un suavizamiento exponencial con tendencia de statsmodels.
 
