@@ -29,8 +29,8 @@ Con esta serie el pronóstico honesto es un nivel con incertidumbre ancha y nada
 
 ## Notas
 
-1. La banda del pronóstico se armó con los residuales del modelo en el entrenamiento y no con las bandas de coeficientes del material, que no son un intervalo para meses nuevos.
-2. Del forecasting.org del material se toma la idea de volver el mes un índice numérico, la idea de pronosticar extrapolando la recta ajustada en el tiempo y el fill_between como banda en la gráfica.
+1. Del forecasting.org del material se toma la idea de volver el mes un índice numérico, la idea de pronosticar extrapolando la recta ajustada en el tiempo y el fill_between como banda en la gráfica.
+2. La banda del pronóstico se armó con los residuales del modelo en el entrenamiento y no con las bandas de coeficientes del material, que no son un intervalo para meses nuevos.
 3. Referencias consultadas
    - https://github.com/ppGodel/data_mining (material de la materia, forecasting.org con la regresión sobre tiempo y las bandas)
    - https://en.wikipedia.org/wiki/Exponential_smoothing (suavizamiento exponencial y Holt)
