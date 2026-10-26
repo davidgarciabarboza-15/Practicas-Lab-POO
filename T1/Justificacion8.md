@@ -6,7 +6,7 @@ Se armó un modelo para pronosticar los meses futuros de una serie y evaluar qu�
 
 Aquí la partición no puede ser al azar como en la práctica 6, porque si el entrenamiento ve meses futuros el error sale mintiendo. 
 
-
+ 
 Se entrenó con los primeros 68 meses y se reservaron los últimos 12 como holdout, que es donde se mide a todos por igual. Los cuatro contendientes son una regresión sobre el índice de tiempo, el promedio del entrenamiento como modelo base, el pronóstico naive que repite el último valor visto, y Holt, un suavizamiento exponencial con tendencia de statsmodels.
 
 En el holdout los errores quedaron así, la regresión con MAE 35.23 y RMSE 42.38, el promedio con 34.23 y 41.76, el naive con 26.00 y 43.67, y Holt con 29.71 y 40.04. El MAE es el error típico de un mes cualquiera y el RMSE castiga más los errores grandes.
