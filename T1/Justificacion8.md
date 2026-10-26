@@ -25,7 +25,7 @@ La gráfica forecast_holdout.png deja ver lo mismo en el holdout, con la banda d
 
 ## Conclusión
 
-Con esta serie el pronóstico honesto es un nivel con incertidumbre ancha y nada más, la regresión no le gana al promedio porque no hay tendencia que explotar, como ya se había visto en la práctica 5, y el naive que ganó el MAE lo hizo por el régimen de actividad baja del holdout y no por una virtud del método, con el detalle de que su ancla de 33 sismos viene de uno de los meses más bajos del catálogo y su banda pisa negativos. Si hubiera que quedarse con un pronóstico operativo, Holt es el que balancea error típico y error peor caso, con MAE 29.71 y el mejor RMSE de los cuatro, mientras que el naive queda como el recordatorio de que ganar una métrica no es ganar el problema.
+Con esta serie el pronóstico honesto es un nivel con incertidumbre ancha y nada más, la regresión no le gana al promedio porque no hay tendencia que explotar, como ya se había visto en la práctica 5, y el naive que ganó el MAE lo hizo por el régimen de actividad baja del holdout y no por una virtud del método, con el detalle de que su ancla de 33 sismos viene de uno de los meses más bajos del catálogo y su banda pisa negativos. Si hubiera que quedarse con un pronóstico operativo, Holt es el que balancea error típico y error peor caso, con MAE 29.71 y el mejor RMSE de los cuatro, y el naive es justo el ejemplo de que el mejor número en una métrica no siempre viene del mejor modelo.
 
 ## Notas
 
