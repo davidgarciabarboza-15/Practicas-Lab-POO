@@ -1,4 +1,4 @@
-# Práctica 9 --- Análisis de Texto (Justificaciones)
+# Práctica 9 Análisis de Texto
 
 El script de esta práctica es Analisis_Texto.py y sus gráficas se guardan como nube_palabras_general.png y nube_palabras_por_pais.png. La tarea fue generar una nube de palabras y hacer un análisis exploratorio sobre datos textuales, y el corpus que usamos ya estaba en el proyecto desde la práctica 1 sin que nadie lo hubiera leído como texto, que es la columna place.
 
