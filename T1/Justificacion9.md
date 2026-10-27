@@ -16,7 +16,9 @@ La limpieza pasa todo a minúsculas y quita los números, la palabra km, las pal
 
 ## Las nubes
 
-La nube general se dibuja con las frecuencias limpias y deja ver los topónimos del catálogo por tamaño. La rejilla 2x2 repite el ejercicio por país y ahí cada subconjunto pinta sus propias palabras, EEUU con sus estados y pueblos, México y Guatemala con sus municipios, y Honduras con una nube muy flaca porque apenas aporta 34 sismos. Para no depender solo de la imagen, el top 8 de tokens por país queda también impreso en la salida.
+La nube general se dibuja con las frecuencias limpias y deja ver los topónimos del catálogo por tamaño. La rejilla 2x2 repite el ejercicio por país y ahí cada subconjunto pinta sus propias palabras, EEUU con sus estados y pueblos, México y Guatemala con sus municipios, y Honduras con una nube muy flaca porque apenas aporta 34 sismos, 85 palabras contra las 14096 de EEUU según los títulos de la propia rejilla. Para no depender solo de la imagen, el top 8 de tokens por país queda también impreso en la salida.
+
+La rejilla deja además dos detalles que vale la pena leer. En la nube de EEUU las palabras new y mexico salen enormes porque el USGS escribe esos lugares como New Mexico, y el token mexico aparece miles de veces en un país que no es México, justo el caso que la regla de la práctica 2 ya resolvía al dejar esos places del lado de EEUU, así que la nube confirma con sus propias palabras por qué esa regla era necesaria. Y en las nubes de Guatemala y México se ven tokens cortados como concepci o amatit, porque la limpieza solo acepta letras de la a a la z y al toparse con un acento parte la palabra y tira el pedazo final, una limitación que no cambia las conclusiones pero que queda escrita por honestidad.
 
 ## Lugares repetidos y secuencias de réplicas
 
