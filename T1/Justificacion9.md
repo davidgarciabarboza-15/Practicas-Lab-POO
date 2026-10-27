@@ -1,10 +1,10 @@
 # Práctica 9 Análisis de Texto
 
-El script de esta práctica es Analisis_Texto.py y sus gráficas se guardan como nube_palabras_general.png y nube_palabras_por_pais.png. La tarea fue generar una nube de palabras y hacer un análisis exploratorio sobre datos textuales, y el corpus que usamos ya estaba en el proyecto desde la práctica 1 sin que nadie lo hubiera leído como texto, que es la columna place.
+La tarea fue generar una nube de palabras y hacer un análisis exploratorio sobre datos textuales, y el corpus que se uso ya estaba en el proyecto desde la práctica 1 sin que nadie lo hubiera leído como texto, que es la columna place.
 
 ## El corpus que ya teníamos
 
-Cada place es una frase escrita por el USGS con su propia gramática, una distancia en kilómetros, una dirección de brújula, un pueblo de referencia y un estado o país al final, como en "25 km NE of Pijijiapan, Mexico". Esas mismas palabras son las que en la práctica 2 convertimos en categorías de país con reglas, así que leerlas ahora como texto conecta con ese trabajo anterior. El corpus son 7893 lugares de los cuales solo una parte son cadenas distintas, y esa diferencia entre lugares totales y lugares únicos ya anticipa el análisis de repetidos que viene más abajo. Los números exactos de esto y de todo lo demás quedan en las capturas de ejecución.
+Cada place es una frase escrita por el USGS con su propia gramática, una distancia en kilómetros, una dirección de brújula, un pueblo de referencia y un estado o país al final, como en "25 km NE of Pijijiapan, Mexico", esas mismas palabras son las que en la práctica 2 convertimos en categorías de país con reglas, así que leerlas ahora como texto conecta con ese trabajo anterior. El corpus son 7893 lugares de los cuales solo una parte son cadenas distintas, y esa diferencia entre lugares totales y lugares únicos ya anticipa el análisis de repetidos que viene más abajo. Los números exactos de esto y de todo lo demás quedan en las capturas de ejecución.
 
 ## Qué dice el texto sin limpiar
 
