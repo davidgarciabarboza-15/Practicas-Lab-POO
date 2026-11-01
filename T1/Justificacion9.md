@@ -46,4 +46,5 @@ La columna place resultó ser texto de verdad y no solo una etiqueta, y ya limpi
 3. Referencias consultadas
    - https://github.com/ppGodel/data_mining (word_cloud.py y text_cloud.py)
    - https://en.wikipedia.org/wiki/Word_cloud (qué representa una nube de palabras y cómo se define el tamaño)
-   - https://wordcloud.readthedocs.io/ (librería wordcloud, generate_from_frequencies y sus parámetros)
+   - https://python-charts.com/ranking/wordcloud-matplotlib/ (bases generales de wordcloud)
+   - https://www.geeksforgeeks.org/python/generating-word-cloud-python/
