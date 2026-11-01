@@ -1,4 +1,4 @@
-# Práctica 9 Análisis de Texto
+# Práctica 9 Análisis de Texto 
 
 La práctica consistió en generar una nube de palabras y hacer un análisis exploratorio sobre datos textuales, y el corpus que se uso ya estaba en el proyecto desde la práctica 1 sin que nadie lo hubiera leído como texto, que es la columna place.
 
