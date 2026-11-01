@@ -29,7 +29,7 @@ La rejilla deja además dos detalles que vale la pena leer, en la nube de EEUU l
 
 ## Lugares repetidos y secuencias de réplicas
 
-Contar cuántas veces se repite cada cadena de place exacta muestra que hay lugares que aparecen cientos de veces, y el caso más extremo es la secuencia de Whites City, New Mexico, que ocupa cinco de los diez primeros lugares con variantes de distancia que juntas pasan de mil sismos, y detrás aparecen western Texas, Toyah y la región de Revilla Gigedo. Un place idéntico cientos de veces no es coincidencia, es una secuencia de réplicas del mismo epicentro, los mismos enjambres que vemos desde la práctica 3 pero detectados ahora con puro texto. 
+Contar cuántas veces se repite cada cadena de place exacta muestra que hay lugares que aparecen cientos de veces, y el caso más extremo es la secuencia de Whites City, New Mexico, que ocupa cinco de los diez primeros lugares con variantes de distancia que juntas pasan de mil sismos, y detrás aparecen western Texas, Toyah y la región de Revilla Gigedo. Un place idéntico cientos de veces no debe ser coincidencia, es una secuencia de réplicas del mismo epicentro, los mismos enjambres que vemos desde la práctica 3 pero detectados ahora con puro texto. 
 
 
 La salida deja el top 10 de lugares repetidos y cuántos lugares se repiten 50 veces o más, junto con cuántos sismos juntan entre todos.
