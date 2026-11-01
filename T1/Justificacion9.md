@@ -39,7 +39,7 @@ La salida deja el top 10 de lugares repetidos y cuántos lugares se repiten 50 v
 
 La columna place resultó ser texto de verdad y no solo una etiqueta, y ya limpio, sus palabras más frecuentes son los pueblos y estados donde tiembla, coherente con lo que el proyecto ya sabía de países y regiones, y sus cadenas repetidas detectan secuencias de réplicas sin usar tiempo ni coordenadas, solo texto. La nube sirve como vista de conjunto del catálogo y el exploratorio es la parte que la explica, con el detalle de que Honduras apenas pinta porque 34 sismos no alcanzan para más.
 
-## Notas
+## NOTAS
 
 1. Del material (word_cloud.py y text_cloud.py) se tomó la idea del min_font_size y el flujo de frecuencias, nube y png.
 2. Los valores exactos de frecuencias, lugares repetidos y conteos de palabras quedan en las capturas de ejecución.
